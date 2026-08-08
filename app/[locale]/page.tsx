@@ -145,7 +145,7 @@ export default async function Home({ params }: HomeProps) {
       </section>
 
       {/* ─── SERVICES ─────────────────────────────────────────────────────── */}
-      <section id="services" className="py-24">
+      <section id="services" className="bg-[#0a0a10] py-24">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
           <FadeIn>
             <div className="mb-4 flex items-center gap-3">
@@ -154,22 +154,22 @@ export default async function Home({ params }: HomeProps) {
                 {locale === "en" ? "What We Do" : "ما نقدمه"}
               </p>
             </div>
-            <h2 className="max-w-xl text-6xl font-bold leading-tight md:text-7xl">
+            <h2 className="max-w-xl text-6xl font-bold leading-tight text-white md:text-7xl">
               {t.home.serviceOverviewTitle}
             </h2>
           </FadeIn>
           <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <StaggerItem key={service.slug}>
-                <div className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:border-[#e8a33d]/40 hover:shadow-md">
+                <div className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm transition hover:border-[#e8a33d]/40 hover:bg-white/10 hover:shadow-md">
                   <div className="relative h-44 w-full overflow-hidden bg-zinc-100">
                     <Image src={service.image} alt={service[locale].title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <ServiceIcon icon={service.icon} />
-                    <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">{service[locale].description}</p>
+                    <h3 className="mt-4 text-lg font-semibold text-white">{service[locale].title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-white/55">{service[locale].description}</p>
                     <div className="mt-5 h-0.5 w-10 rounded-full bg-[#e8a33d] transition-all duration-300 group-hover:w-16" />
                   </div>
                 </div>
@@ -270,7 +270,7 @@ export default async function Home({ params }: HomeProps) {
       </section>
 
       {/* ─── PARTNERS ─────────────────────────────────────────────────────── */}
-      <section className="overflow-hidden bg-[#0a0a10] border-t border-white/8 py-16 text-white">
+      <section id="partners" className="overflow-hidden bg-[#0a0a10] border-t border-white/8 py-16 text-white">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
           <FadeIn>
             <p className="mb-2 text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">

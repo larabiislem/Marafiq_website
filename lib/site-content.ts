@@ -77,21 +77,6 @@ export const services = [
     },
   },
   {
-    slug: "security",
-    icon: "shield",
-    image: "/assets/PLACEHOLDER_SECURITY.png",
-    en: {
-      title: "Security Systems",
-      description:
-        "Integrated security systems including CCTV, alarms, and safety monitoring for industrial, commercial, and residential facilities.",
-    },
-    ar: {
-      title: "أنظمة الأمان",
-      description:
-        "أنظمة أمنية متكاملة تشمل كاميرات المراقبة والإنذار ومراقبة السلامة للمنشآت الصناعية والتجارية والسكنية.",
-    },
-  },
-  {
     slug: "cleaning",
     icon: "sparkles",
     image: "/assets/service-cleaning.png",

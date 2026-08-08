@@ -51,14 +51,14 @@ export default async function Home({ params }: HomeProps) {
         <div className="absolute -right-10 bottom-10 h-72 w-72 rounded-full bg-white/20 blur-3xl" />
         <div className="relative mx-auto flex w-full max-w-7xl flex-col items-start px-4 py-24 text-white md:px-8">
           <FadeIn className="max-w-3xl">
-            <div className="float-slow mb-7 inline-flex rounded-2xl bg-white/92 px-5 py-3 shadow-2xl">
-              <Image
-                src="/assets/image.svg"
-                alt="Marafeq Al-Banaa Arabic logo in SVG"
-                width={250}
-                height={92}
-                priority
-              />
+            <div className="float-slow mb-7 inline-flex">
+            <Image
+              src="/assets/image.svg"
+              alt="Marafeq Al-Banaa Arabic logo in SVG"
+              width={250}
+              height={92}
+              priority
+            />
             </div>
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-[#f5c06e]">
               Marafeq Al-Banaa

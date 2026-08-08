@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2 } from "lucide-react";
 import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
 import { dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
@@ -15,6 +15,7 @@ export default async function Home({ params }: HomeProps) {
   if (!isLocale(rawLocale)) notFound();
   const locale: Locale = rawLocale;
   const t = dictionary[locale];
+  const rtl = isRtl(locale);
 
   const capabilityCards = [
     {
@@ -25,6 +26,7 @@ export default async function Home({ params }: HomeProps) {
       textAr:
         "تخطيط وتنفيذ شامل لشبكات الكهرباء والمعدات الميكانيكية والبنية الفنية المتكاملة مع رقابة جودة دقيقة في جميع المراحل.",
       image: "/assets/Electromechanical Works.png",
+      tag: locale === "en" ? "Electromechanical" : "كهروميكانيكية",
     },
     {
       titleEn: "Heating, Ventilation and Air Conditioning Solutions",
@@ -34,6 +36,7 @@ export default async function Home({ params }: HomeProps) {
       textAr:
         "أنظمة مناخية عالية الكفاءة لضبط درجات الحرارة وتوفير تدفق هواء صحي واعتمادية تشغيلية طويلة المدى.",
       image: "/assets/PLACEHOLDER_HVAC.png",
+      tag: "HVAC",
     },
     {
       titleEn: "Plumbing and Sanitary Network Delivery",
@@ -43,42 +46,54 @@ export default async function Home({ params }: HomeProps) {
       textAr:
         "تنفيذ وصيانة شبكات المياه والصرف والبنية الصحية بما يتوافق مع احتياجات المشاريع السكنية والتجارية.",
       image: "/assets/Plumbing,Systems.png",
+      tag: locale === "en" ? "Plumbing" : "سباكة",
     },
   ];
 
   return (
-    <div className="bg-white text-[#1a1a1a]">
-      {/* HERO */}
-      <section className="relative min-h-[78vh] overflow-hidden brand-gradient">
+    <div className="bg-white text-[#1a1a1a]" dir={rtl ? "rtl" : "ltr"}>
+
+      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen overflow-hidden brand-gradient flex items-center">
+        <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#e8a33d]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute inset-0 shine" />
-        <div className="absolute -left-20 top-8 h-64 w-64 rounded-full bg-[#e8a33d]/20 blur-3xl" />
-        <div className="absolute -right-10 bottom-10 h-72 w-72 rounded-full bg-white/20 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col items-start px-4 py-24 text-white md:px-8">
-          <FadeIn className="max-w-3xl">
-            <div className="float-slow mb-7 inline-flex">
+
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-28 md:px-12">
+          <FadeIn>
+            <div className="float-slow mb-10 inline-block">
               <Image
                 src="/assets/image.svg"
-                alt="Marafeq Al-Banaa Arabic logo in SVG"
-                width={250}
-                height={92}
+                alt="Marafeq Al-Banaa"
+                width={220}
+                height={80}
                 priority
               />
             </div>
-            <p className="mb-3 text-xs uppercase tracking-[0.25em] text-[#f5c06e]">
-              Marafeq Al-Banaa
+
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#f5c06e]">
+              Marafeq Al-Banaa · مرافق البناء
             </p>
-            <h1 className="text-4xl font-bold leading-tight md:text-6xl">{t.heroTitle}</h1>
-            <p className="mt-5 max-w-2xl text-base text-white/90 md:text-lg">{t.heroSubtitle}</p>
-            <div className={`mt-8 flex flex-wrap gap-3 ${isRtl(locale) ? "md:flex-row-reverse" : ""}`}>
+
+            <h1 className="max-w-4xl text-5xl font-bold leading-[1.1] text-white md:text-7xl">
+              {t.heroTitle}
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
+              {t.heroSubtitle}
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href={`/${locale}/contact`}
-                className="rounded-full bg-[#e8a33d] px-6 py-3 text-sm font-semibold text-[#111] transition hover:bg-[#f0b14f]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-8 py-4 text-sm font-semibold text-[#111] shadow-lg transition hover:bg-[#f5c06e]"
               >
                 {t.ctaQuote}
+                <ArrowRight size={16} className={rtl ? "rotate-180" : ""} />
               </Link>
               <Link
-                href={`/${locale}/contact`}
-                className="rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                href={`/${locale}/about`}
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 {t.ctaContact}
               </Link>
@@ -87,181 +102,202 @@ export default async function Home({ params }: HomeProps) {
         </div>
       </section>
 
-      {/* ABOUT — dynamic, pro, inspiring — now BEFORE services */}
-      <section id="about" className="relative overflow-hidden bg-[#101010] py-24 text-white">
-        <div className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-[#e8a33d]/10 blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#e8a33d]/10 blur-3xl" />
-        <div className="relative mx-auto w-full max-w-7xl px-4 md:px-8">
+      {/* ─── ABOUT ────────────────────────────────────────────────────────── */}
+      <section id="about" className="relative overflow-hidden bg-[#0a0a10] py-28 text-white">
+        <div className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
+
+        <div className="relative mx-auto w-full max-w-7xl px-6 md:px-12">
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e8a33d]">
-              {locale === "en" ? "Who We Are" : "من نحن"}
-            </p>
-            <h2 className="gold-text mt-4 max-w-3xl text-4xl font-bold leading-[1.15] md:text-6xl">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#e8a33d]" />
+              <p className="text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
+                {locale === "en" ? "Who We Are" : "من نحن"}
+              </p>
+            </div>
+            <h2 className="max-w-3xl text-5xl font-bold leading-tight text-white md:text-7xl">
               {t.about.title}
             </h2>
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/70 md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60">
               {t.about.intro}
             </p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {t.about.values.map((value) => (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {t.about.values.map((v) => (
                 <span
-                  key={value}
-                  className="rounded-full border border-[#e8a33d]/30 bg-[#e8a33d]/10 px-4 py-1.5 text-xs font-medium text-[#f5c06e] md:text-sm"
+                  key={v}
+                  className="rounded-full border border-[#e8a33d]/25 bg-[#e8a33d]/10 px-4 py-1.5 text-xs font-medium text-[#f5c06e]"
                 >
-                  {value}
+                  {v}
                 </span>
               ))}
             </div>
           </FadeIn>
 
-          <Stagger className="mt-14 grid gap-6 md:grid-cols-2">
+          <Stagger className="mt-14 grid gap-5 md:grid-cols-3">
             <StaggerItem>
-              <article className="hover-lift relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur md:p-9">
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#e8a33d] to-[#cf8a22]" />
-                <h3 className="text-2xl font-semibold text-[#e8a33d]">{t.about.visionTitle}</h3>
-                <p className="mt-4 leading-relaxed text-white/70">{t.about.vision}</p>
+              <article className="hover-lift h-full rounded-2xl border border-white/8 bg-white/[0.04] p-8 backdrop-blur">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8a33d]/15">
+                  <Compass className="h-5 w-5 text-[#e8a33d]" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold text-white">{t.about.visionTitle}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/55">{t.about.vision}</p>
               </article>
             </StaggerItem>
             <StaggerItem>
-              <article className="hover-lift relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur md:p-9">
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#e8a33d] to-[#cf8a22]" />
-                <h3 className="text-2xl font-semibold text-[#e8a33d]">{t.about.missionTitle}</h3>
-                <p className="mt-4 leading-relaxed text-white/70">{t.about.mission}</p>
+              <article className="hover-lift h-full rounded-2xl border border-white/8 bg-white/[0.04] p-8 backdrop-blur">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8a33d]/15">
+                  <Flag className="h-5 w-5 text-[#e8a33d]" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold text-white">{t.about.missionTitle}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/55">{t.about.mission}</p>
+              </article>
+            </StaggerItem>
+            <StaggerItem>
+              <article className="hover-lift shine h-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#e8a33d] to-[#c8841d] p-8">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-black/15">
+                  <HeartHandshake className="h-5 w-5 text-[#111]" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold text-[#111]">{t.about.promiseTitle}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#111]/75">{t.about.promise}</p>
               </article>
             </StaggerItem>
           </Stagger>
 
-          <FadeIn delay={0.1} className="mt-6">
-            <article className="shine relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#e8a33d] to-[#cf8a22] p-9 text-[#1a1a1a] shadow-2xl md:p-12">
-              <div className="relative flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1a1a1a]/10">
-                  <Sparkles className="h-5 w-5 text-[#1a1a1a]" />
-                </span>
-                <h3 className="text-2xl font-semibold md:text-3xl">{t.about.promiseTitle}</h3>
-              </div>
-              <p className="relative mt-5 max-w-3xl text-base leading-relaxed text-[#1a1a1a]/85 md:text-lg">
-                {t.about.promise}
-              </p>
-            </article>
-          </FadeIn>
-
-          <FadeIn delay={0.16} className="mt-6">
-            <article className="hover-lift rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur md:p-9">
-              <h3 className="text-xl font-semibold text-white">
-                {locale === "en" ? "Execution Methodology" : "منهجية التنفيذ"}
-              </h3>
-              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 md:text-base">
-                {locale === "en"
-                  ? "Our teams follow a structured methodology covering technical evaluation, integrated execution, quality control checkpoints, and final handover with complete documentation."
-                  : "تتبع فرقنا منهجية منظمة تشمل التقييم الفني والتنفيذ المتكامل ونقاط فحص الجودة والتسليم النهائي مع توثيق كامل."}
-              </p>
-            </article>
-          </FadeIn>
-
-          <FadeIn delay={0.22} className="mt-10">
+          <FadeIn delay={0.2} className="mt-8">
             <Link
               href={`/${locale}/about`}
-              className="hover-lift group inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-8 py-4 text-sm font-semibold text-[#111] shadow-xl transition hover:bg-[#f5c06e]"
+              className="hover-lift group inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-7 py-3.5 text-sm font-semibold text-[#111] shadow-xl transition hover:bg-[#f5c06e]"
             >
               {locale === "en" ? "Learn more about us" : "المزيد عنا"}
-              <ArrowRight
-                size={18}
-                className={`transition-transform group-hover:translate-x-1 ${isRtl(locale) ? "rotate-180 group-hover:-translate-x-1" : ""}`}
-              />
+              <ArrowRight size={16} className={`transition-transform group-hover:translate-x-1 ${rtl ? "rotate-180" : ""}`} />
             </Link>
           </FadeIn>
         </div>
       </section>
 
-      {/* SERVICES — display-only, no navigation */}
-      <section id="services" className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8">
-        <FadeIn>
-          <h2 className="text-3xl font-bold">{t.home.serviceOverviewTitle}</h2>
-        </FadeIn>
-        <Stagger className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <StaggerItem key={service.slug}>
-              <div className="hover-lift overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-                <div className="relative h-40 w-full overflow-hidden bg-zinc-100">
-                  <Image
-                    src={service.image}
-                    alt={service[locale].title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <ServiceIcon icon={service.icon} />
-                  <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
-                  <p className="mt-2 text-sm text-zinc-600">{service[locale].description}</p>
-                </div>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
+      {/* ─── SERVICES ─────────────────────────────────────────────────────── */}
+      <section id="services" className="py-24">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+          <FadeIn>
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#e8a33d]" />
+              <p className="text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
+                {locale === "en" ? "What We Do" : "ما نقدمه"}
+              </p>
+            </div>
+            <h2 className="max-w-xl text-5xl font-bold leading-tight md:text-6xl">
+              {t.home.serviceOverviewTitle}
+            </h2>
+          </FadeIn>
 
-      {/* DETAILED CAPABILITIES — zigzag image + text layout */}
-      <section className="mx-auto w-full max-w-7xl px-4 pb-16 md:px-8">
-        <FadeIn>
-          <h2 className="text-3xl font-bold">
-            {locale === "en" ? "Detailed Engineering Capabilities" : "قدرات هندسية تفصيلية"}
-          </h2>
-          <p className="mt-3 max-w-4xl text-zinc-700">
-            {locale === "en"
-              ? "The following project visuals are integrated with clear technical explanation so clients understand scope, quality process, and expected project outcomes."
-              : "تم دمج صور المشاريع مع شرح تقني واضح لمساعدة العميل على فهم نطاق العمل ومعايير الجودة والنتائج المتوقعة."}
-          </p>
-        </FadeIn>
-        <div className="mt-10 space-y-10">
-          {capabilityCards.map((card, index) => {
-            const reverse = index % 2 === 1;
-            return (
-              <FadeIn key={card.titleEn} delay={index * 0.08}>
-                <article
-                  className={`grid items-center gap-8 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm md:grid-cols-2 ${
-                    reverse ? "md:[direction:rtl]" : ""
-                  }`}
-                >
-                  <div className={`relative h-64 w-full overflow-hidden md:h-80 ${reverse ? "md:[direction:ltr]" : ""}`}>
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <StaggerItem key={service.slug}>
+                <div className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:border-[#e8a33d]/40 hover:shadow-md">
+                  <div className="relative h-44 w-full overflow-hidden bg-zinc-100">
                     <Image
-                      src={card.image}
-                      alt={locale === "en" ? card.titleEn : card.titleAr}
+                      src={service.image}
+                      alt={service[locale].title}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
-                  <div className={`p-6 md:p-8 ${reverse ? "md:[direction:ltr]" : ""}`}>
-                    <h3 className="text-2xl font-semibold">
-                      {locale === "en" ? card.titleEn : card.titleAr}
-                    </h3>
-                    <p className="mt-3 text-zinc-700">
-                      {locale === "en" ? card.textEn : card.textAr}
+                  <div className="flex flex-1 flex-col p-6">
+                    <ServiceIcon icon={service.icon} />
+                    <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">
+                      {service[locale].description}
                     </p>
-                    <p className="mt-4 text-sm text-zinc-500">
-                      {locale === "en"
-                        ? "Execution includes design review, safety compliance, technical supervision, and final quality handover."
-                        : "يشمل التنفيذ مراجعة التصميم والالتزام بمعايير السلامة والإشراف الفني والتسليم النهائي وفق الجودة."}
-                    </p>
-                    <div className="mt-4 h-1 w-20 rounded-full bg-[#e8a33d]" />
+                    <div className="mt-5 h-0.5 w-10 rounded-full bg-[#e8a33d] transition-all duration-300 group-hover:w-16" />
                   </div>
-                </article>
-              </FadeIn>
-            );
-          })}
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </section>
 
-      {/* PARTNERS */}
-      <section className="overflow-hidden bg-[#101010] py-14 text-white">
-        <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-          <h2 className="text-2xl font-bold text-[#e8a33d]">{t.home.partnersTitle}</h2>
-          <div className="mt-8 overflow-hidden">
-            <div className="marquee flex min-w-max gap-4">
+      {/* ─── CAPABILITIES ─────────────────────────────────────────────────── */}
+      <section className="bg-zinc-50 py-24">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+          <FadeIn>
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#e8a33d]" />
+              <p className="text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
+                {locale === "en" ? "Engineering Depth" : "العمق الهندسي"}
+              </p>
+            </div>
+            <h2 className="max-w-xl text-5xl font-bold leading-tight md:text-6xl">
+              {locale === "en" ? "Detailed Capabilities" : "القدرات التفصيلية"}
+            </h2>
+            <p className="mt-4 max-w-2xl text-base text-zinc-500">
+              {locale === "en"
+                ? "Each discipline backed by structured execution, rigorous quality control, and full project documentation."
+                : "كل تخصص مدعوم بتنفيذ منظم ورقابة جودة صارمة وتوثيق شامل للمشروع."}
+            </p>
+          </FadeIn>
+
+          <div className="mt-14 space-y-6">
+            {capabilityCards.map((card, index) => {
+              const isEven = index % 2 === 1;
+              return (
+                <FadeIn key={card.titleEn} delay={index * 0.07}>
+                  <article className="grid overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm md:grid-cols-2">
+                    <div className={`relative h-64 w-full overflow-hidden md:h-auto ${isEven ? "md:order-last" : ""}`}>
+                      <Image
+                        src={card.image}
+                        alt={locale === "en" ? card.titleEn : card.titleAr}
+                        fill
+                        className="object-cover"
+                      />
+                      <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+                        {card.tag}
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-center p-8 md:p-10">
+                      <h3 className="text-2xl font-bold leading-snug">
+                        {locale === "en" ? card.titleEn : card.titleAr}
+                      </h3>
+                      <p className="mt-4 text-sm leading-relaxed text-zinc-600">
+                        {locale === "en" ? card.textEn : card.textAr}
+                      </p>
+                      <ul className="mt-6 space-y-2">
+                        {(locale === "en"
+                          ? ["Design review & compliance", "Safety-first supervision", "Quality handover report"]
+                          : ["مراجعة التصميم والامتثال", "إشراف مع أولوية السلامة", "تقرير تسليم الجودة"]
+                        ).map((item) => (
+                          <li key={item} className="flex items-center gap-2 text-sm text-zinc-500">
+                            <CheckCircle2 size={15} className="shrink-0 text-[#e8a33d]" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-7 h-0.5 w-12 rounded-full bg-[#e8a33d]" />
+                    </div>
+                  </article>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PARTNERS ─────────────────────────────────────────────────────── */}
+      <section className="overflow-hidden bg-[#0a0a10] py-16 text-white">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+          <FadeIn>
+            <p className="mb-2 text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
+              {locale === "en" ? "Trusted By" : "يثقون بنا"}
+            </p>
+            <h2 className="text-4xl font-bold text-white md:text-5xl">{t.home.partnersTitle}</h2>
+          </FadeIn>
+          <div className="mt-10 overflow-hidden">
+            <div className="marquee flex min-w-max gap-3">
               {[...partners, ...partners].map((partner, idx) => (
                 <div
                   key={`${partner}-${idx}`}
-                  className="rounded-full border border-white/25 px-5 py-2 text-sm text-white/90"
+                  className="rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-sm text-white/80 backdrop-blur"
                 >
                   {partner}
                 </div>

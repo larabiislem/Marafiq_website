@@ -94,14 +94,14 @@ export const services = [
 ] as const;
 
 export const partners = [
-  "HEX",
-  "Al Zamil — Industry, Trade & Transport",
-  "Zamillight",
-  "KDK",
-  "Masdar Building Materials",
-  "Tredex",
-  "Ideal Standard",
-  "hansgrohe",
+  { name: "HEX", logo: "/assets/HEX.png" },
+  { name: "Al Zamil", logo: "/assets/ALZAMEL.png" },
+  { name: "Zamillight", logo: "/assets/alzamilight.png" },
+  { name: "KDK", logo: "/assets/kdk.png" },
+  { name: "Masdar", logo: "/assets/masdar.png" },
+  { name: "Tredex", logo: "/assets/Tredex.png" },
+  { name: "Ideal Standard", logo: "/assets/idealstandar.png" },
+  { name: "hansgrohe", logo: "/assets/hansgrohe.png" },
 ];
 
 export const projectItems = [

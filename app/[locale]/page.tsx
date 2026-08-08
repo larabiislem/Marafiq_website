@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2, Zap, Wind, Droplets } from "lucide-react";
 import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
 import { dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
@@ -19,34 +19,40 @@ export default async function Home({ params }: HomeProps) {
 
   const capabilityCards = [
     {
-      titleEn: "Mechanical and Electrical Engineering Execution",
-      titleAr: "تنفيذ هندسي متكامل للأعمال الميكانيكية والكهربائية",
-      textEn:
-        "Complete planning and execution of electrical distribution, mechanical equipment, and integrated technical infrastructure with quality controls on every phase.",
-      textAr:
-        "تخطيط وتنفيذ شامل لشبكات الكهرباء والمعدات الميكانيكية والبنية الفنية المتكاملة مع رقابة جودة دقيقة في جميع المراحل.",
-      image: "/assets/Electromechanical Works.png",
+      icon: Zap,
+      number: "01",
+      titleEn: "Mechanical and Electrical Engineering",
+      titleAr: "الهندسة الميكانيكية والكهربائية",
+      textEn: "Complete planning and execution of electrical distribution, mechanical equipment, and integrated technical infrastructure with quality controls on every phase.",
+      textAr: "تخطيط وتنفيذ شامل لشبكات الكهرباء والمعدات الميكانيكية والبنية الفنية المتكاملة مع رقابة جودة دقيقة في جميع المراحل.",
       tag: locale === "en" ? "Electromechanical" : "كهروميكانيكية",
+      checklistEn: ["Electrical distribution networks", "Mechanical equipment installation", "Technical infrastructure integration", "Phase-by-phase quality control"],
+      checklistAr: ["شبكات توزيع الكهرباء", "تركيب المعدات الميكانيكية", "تكامل البنية الفنية", "رقابة الجودة في كل مرحلة"],
+      accent: "#e8a33d",
     },
     {
-      titleEn: "Heating, Ventilation and Air Conditioning Solutions",
-      titleAr: "حلول متقدمة للتدفئة والتهوية وتكييف الهواء",
-      textEn:
-        "Energy-efficient climate systems designed for stable temperature control, healthy air flow, and long-term operating reliability.",
-      textAr:
-        "أنظمة مناخية عالية الكفاءة لضبط درجات الحرارة وتوفير تدفق هواء صحي واعتمادية تشغيلية طويلة المدى.",
-      image: "/assets/PLACEHOLDER_HVAC.png",
+      icon: Wind,
+      number: "02",
+      titleEn: "Heating, Ventilation & Air Conditioning",
+      titleAr: "التدفئة والتهوية وتكييف الهواء",
+      textEn: "Energy-efficient climate systems designed for stable temperature control, healthy air flow, and long-term operating reliability.",
+      textAr: "أنظمة مناخية عالية الكفاءة لضبط درجات الحرارة وتوفير تدفق هواء صحي واعتمادية تشغيلية طويلة المدى.",
       tag: "HVAC",
+      checklistEn: ["Energy-efficient design", "Temperature & humidity control", "Air quality management", "Preventive maintenance plans"],
+      checklistAr: ["تصميم موفر للطاقة", "التحكم في درجة الحرارة والرطوبة", "إدارة جودة الهواء", "خطط الصيانة الوقائية"],
+      accent: "#e8a33d",
     },
     {
-      titleEn: "Plumbing and Sanitary Network Delivery",
-      titleAr: "تنفيذ شبكات السباكة والأنظمة الصحية",
-      textEn:
-        "Installation and maintenance of water supply, drainage, and sanitary infrastructure tailored to residential and commercial needs.",
-      textAr:
-        "تنفيذ وصيانة شبكات المياه والصرف والبنية الصحية بما يتوافق مع احتياجات المشاريع السكنية والتجارية.",
-      image: "/assets/Plumbing,Systems.png",
+      icon: Droplets,
+      number: "03",
+      titleEn: "Plumbing & Sanitary Networks",
+      titleAr: "السباكة والشبكات الصحية",
+      textEn: "Installation and maintenance of water supply, drainage, and sanitary infrastructure tailored to residential and commercial needs.",
+      textAr: "تنفيذ وصيانة شبكات المياه والصرف والبنية الصحية بما يتوافق مع احتياجات المشاريع السكنية والتجارية.",
       tag: locale === "en" ? "Plumbing" : "سباكة",
+      checklistEn: ["Water supply systems", "Drainage & sewage networks", "Sanitary fixture installation", "Leak detection & testing"],
+      checklistAr: ["أنظمة إمداد المياه", "شبكات الصرف الصحي", "تركيب الأجهزة الصحية", "كشف التسربات والاختبار"],
+      accent: "#e8a33d",
     },
   ];
 
@@ -62,39 +68,21 @@ export default async function Home({ params }: HomeProps) {
         <div className="relative mx-auto w-full max-w-7xl px-6 py-28 md:px-12">
           <FadeIn>
             <div className="float-slow mb-10 inline-block">
-              <Image
-                src="/assets/image.svg"
-                alt="Marafeq Al-Banaa"
-                width={220}
-                height={80}
-                priority
-              />
+              <Image src="/assets/image.svg" alt="Marafeq Al-Banaa" width={220} height={80} priority />
             </div>
-
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#f5c06e]">
               Marafeq Al-Banaa · مرافق البناء
             </p>
-
             <h1 className="max-w-4xl text-5xl font-bold leading-[1.1] text-white md:text-7xl">
               {t.heroTitle}
             </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
-              {t.heroSubtitle}
-            </p>
-
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">{t.heroSubtitle}</p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-8 py-4 text-sm font-semibold text-[#111] shadow-lg transition hover:bg-[#f5c06e]"
-              >
+              <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-8 py-4 text-sm font-semibold text-[#111] shadow-lg transition hover:bg-[#f5c06e]">
                 {t.ctaQuote}
                 <ArrowRight size={16} className={rtl ? "rotate-180" : ""} />
               </Link>
-              <Link
-                href={`/${locale}/about`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+              <Link href={`/${locale}/about`} className="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10">
                 {t.ctaContact}
               </Link>
             </div>
@@ -106,7 +94,6 @@ export default async function Home({ params }: HomeProps) {
       <section id="about" className="relative overflow-hidden bg-[#0a0a10] py-28 text-white">
         <div className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
         <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
-
         <div className="relative mx-auto w-full max-w-7xl px-6 md:px-12">
           <FadeIn>
             <div className="mb-4 flex items-center gap-3">
@@ -115,24 +102,16 @@ export default async function Home({ params }: HomeProps) {
                 {locale === "en" ? "Who We Are" : "من نحن"}
               </p>
             </div>
-            <h2 className="max-w-3xl text-5xl font-bold leading-tight text-white md:text-7xl">
+            <h2 className="max-w-3xl text-6xl font-bold leading-tight text-white md:text-8xl">
               {t.about.title}
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60">
-              {t.about.intro}
-            </p>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60">{t.about.intro}</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {t.about.values.map((v) => (
-                <span
-                  key={v}
-                  className="rounded-full border border-[#e8a33d]/25 bg-[#e8a33d]/10 px-4 py-1.5 text-xs font-medium text-[#f5c06e]"
-                >
-                  {v}
-                </span>
+                <span key={v} className="rounded-full border border-[#e8a33d]/25 bg-[#e8a33d]/10 px-4 py-1.5 text-xs font-medium text-[#f5c06e]">{v}</span>
               ))}
             </div>
           </FadeIn>
-
           <Stagger className="mt-14 grid gap-5 md:grid-cols-3">
             <StaggerItem>
               <article className="hover-lift h-full rounded-2xl border border-white/8 bg-white/[0.04] p-8 backdrop-blur">
@@ -162,16 +141,6 @@ export default async function Home({ params }: HomeProps) {
               </article>
             </StaggerItem>
           </Stagger>
-
-          <FadeIn delay={0.2} className="mt-8">
-            <Link
-              href={`/${locale}/about`}
-              className="hover-lift group inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-7 py-3.5 text-sm font-semibold text-[#111] shadow-xl transition hover:bg-[#f5c06e]"
-            >
-              {locale === "en" ? "Learn more about us" : "المزيد عنا"}
-              <ArrowRight size={16} className={`transition-transform group-hover:translate-x-1 ${rtl ? "rotate-180" : ""}`} />
-            </Link>
-          </FadeIn>
         </div>
       </section>
 
@@ -185,30 +154,22 @@ export default async function Home({ params }: HomeProps) {
                 {locale === "en" ? "What We Do" : "ما نقدمه"}
               </p>
             </div>
-            <h2 className="max-w-xl text-5xl font-bold leading-tight md:text-6xl">
+            <h2 className="max-w-xl text-6xl font-bold leading-tight md:text-7xl">
               {t.home.serviceOverviewTitle}
             </h2>
           </FadeIn>
-
           <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <StaggerItem key={service.slug}>
                 <div className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:border-[#e8a33d]/40 hover:shadow-md">
                   <div className="relative h-44 w-full overflow-hidden bg-zinc-100">
-                    <Image
-                      src={service.image}
-                      alt={service[locale].title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <Image src={service.image} alt={service[locale].title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <ServiceIcon icon={service.icon} />
                     <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">
-                      {service[locale].description}
-                    </p>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">{service[locale].description}</p>
                     <div className="mt-5 h-0.5 w-10 rounded-full bg-[#e8a33d] transition-all duration-300 group-hover:w-16" />
                   </div>
                 </div>
@@ -219,7 +180,7 @@ export default async function Home({ params }: HomeProps) {
       </section>
 
       {/* ─── CAPABILITIES ─────────────────────────────────────────────────── */}
-      <section className="bg-zinc-50 py-24">
+      <section className="bg-[#0a0a10] py-28 text-white">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
           <FadeIn>
             <div className="mb-4 flex items-center gap-3">
@@ -228,52 +189,77 @@ export default async function Home({ params }: HomeProps) {
                 {locale === "en" ? "Engineering Depth" : "العمق الهندسي"}
               </p>
             </div>
-            <h2 className="max-w-xl text-5xl font-bold leading-tight md:text-6xl">
+            <h2 className="max-w-2xl text-6xl font-bold leading-tight md:text-7xl">
               {locale === "en" ? "Detailed Capabilities" : "القدرات التفصيلية"}
             </h2>
-            <p className="mt-4 max-w-2xl text-base text-zinc-500">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/55">
               {locale === "en"
                 ? "Each discipline backed by structured execution, rigorous quality control, and full project documentation."
                 : "كل تخصص مدعوم بتنفيذ منظم ورقابة جودة صارمة وتوثيق شامل للمشروع."}
             </p>
           </FadeIn>
 
-          <div className="mt-14 space-y-6">
+          <div className="mt-16 space-y-5">
             {capabilityCards.map((card, index) => {
-              const isEven = index % 2 === 1;
+              const Icon = card.icon;
               return (
-                <FadeIn key={card.titleEn} delay={index * 0.07}>
-                  <article className="grid overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm md:grid-cols-2">
-                    <div className={`relative h-64 w-full overflow-hidden md:h-auto ${isEven ? "md:order-last" : ""}`}>
-                      <Image
-                        src={card.image}
-                        alt={locale === "en" ? card.titleEn : card.titleAr}
-                        fill
-                        className="object-cover"
-                      />
-                      <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                        {card.tag}
+                <FadeIn key={card.number} delay={index * 0.1}>
+                  <article className="group grid items-stretch overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] transition-all duration-500 hover:border-white/20 hover:bg-white/[0.06] md:grid-cols-[1fr_2fr]">
+
+                    {/* LEFT — number + icon + tag */}
+                    <div className="relative flex flex-col justify-between border-b border-white/8 p-8 md:border-b-0 md:border-r md:border-white/8 md:p-10">
+                      {/* Big faded number */}
+                      <span className="absolute right-6 top-4 select-none text-[7rem] font-black leading-none text-white/[0.04] md:right-8 md:top-6">
+                        {card.number}
                       </span>
+
+                      <div>
+                        {/* Icon circle */}
+                        <div
+                          className="flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110"
+                          style={{ backgroundColor: `${card.accent}20`, border: `1px solid ${card.accent}40` }}
+                        >
+                          <Icon className="h-7 w-7" style={{ color: card.accent }} />
+                        </div>
+
+                        {/* Tag pill */}
+                        <span
+                          className="mt-5 inline-block rounded-full px-3 py-1 text-xs font-semibold"
+                          style={{ backgroundColor: `${card.accent}15`, color: card.accent, border: `1px solid ${card.accent}30` }}
+                        >
+                          {card.tag}
+                        </span>
+                      </div>
+
+                      {/* Animated accent bar at bottom */}
+                      <div
+                        className="mt-8 h-0.5 w-12 rounded-full transition-all duration-500 group-hover:w-full"
+                        style={{ backgroundColor: card.accent }}
+                      />
                     </div>
-                    <div className="flex flex-col justify-center p-8 md:p-10">
-                      <h3 className="text-2xl font-bold leading-snug">
+
+                    {/* RIGHT — title + text + checklist */}
+                    <div className="p-8 md:p-10">
+                      <h3 className="text-2xl font-bold leading-snug text-white md:text-3xl">
                         {locale === "en" ? card.titleEn : card.titleAr}
                       </h3>
-                      <p className="mt-4 text-sm leading-relaxed text-zinc-600">
+                      <p className="mt-4 text-sm leading-relaxed text-white/55">
                         {locale === "en" ? card.textEn : card.textAr}
                       </p>
-                      <ul className="mt-6 space-y-2">
-                        {(locale === "en"
-                          ? ["Design review & compliance", "Safety-first supervision", "Quality handover report"]
-                          : ["مراجعة التصميم والامتثال", "إشراف مع أولوية السلامة", "تقرير تسليم الجودة"]
-                        ).map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-sm text-zinc-500">
-                            <CheckCircle2 size={15} className="shrink-0 text-[#e8a33d]" />
-                            {item}
+
+                      {/* Checklist grid */}
+                      <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+                        {(locale === "en" ? card.checklistEn : card.checklistAr).map((item) => (
+                          <li key={item} className="flex items-start gap-2.5">
+                            <CheckCircle2
+                              size={16}
+                              className="mt-0.5 shrink-0"
+                              style={{ color: card.accent }}
+                            />
+                            <span className="text-sm text-white/65">{item}</span>
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-7 h-0.5 w-12 rounded-full bg-[#e8a33d]" />
                     </div>
                   </article>
                 </FadeIn>
@@ -284,7 +270,7 @@ export default async function Home({ params }: HomeProps) {
       </section>
 
       {/* ─── PARTNERS ─────────────────────────────────────────────────────── */}
-      <section className="overflow-hidden bg-[#0a0a10] py-16 text-white">
+      <section className="overflow-hidden bg-[#0a0a10] border-t border-white/8 py-16 text-white">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
           <FadeIn>
             <p className="mb-2 text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
@@ -293,13 +279,18 @@ export default async function Home({ params }: HomeProps) {
             <h2 className="text-4xl font-bold text-white md:text-5xl">{t.home.partnersTitle}</h2>
           </FadeIn>
           <div className="mt-10 overflow-hidden">
-            <div className="marquee flex min-w-max gap-3">
+            <div className="marquee flex min-w-max items-center gap-5">
               {[...partners, ...partners].map((partner, idx) => (
                 <div
-                  key={`${partner}-${idx}`}
-                  className="rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-sm text-white/80 backdrop-blur"
+                  key={`${partner.name}-${idx}`}
+                  className="group relative h-44 w-64 shrink-0 overflow-hidden rounded-3xl border-4 border-[#e8a33d] shadow-[0_0_20px_#e8a33d33] transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_#e8a33d66]"
                 >
-                  {partner}
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 </div>
               ))}
             </div>

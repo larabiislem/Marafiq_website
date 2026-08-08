@@ -278,22 +278,20 @@ export default async function Home({ params }: HomeProps) {
             </p>
             <h2 className="text-4xl font-bold text-white md:text-5xl">{t.home.partnersTitle}</h2>
           </FadeIn>
-          <div className="mt-10 overflow-hidden">
-            <div className="marquee-slow flex min-w-max items-center gap-6">
-              {[...partners, ...partners].map((partner, idx) => (
+          <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+              {partners.map((partner) => (
                 <div
-                  key={`${partner.name}-${idx}`}
-                  className="group relative h-40 w-60 shrink-0 overflow-hidden rounded-2xl border-2 border-[#9A6E00] bg-[#B8860B] shadow-[0_0_16px_#B8860B44] transition-all duration-500 hover:scale-105 hover:bg-[#C8960F] hover:shadow-[0_0_32px_#B8860B88]"
+                  key={partner.name}
+                  className="group relative h-36 w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:border-[#e8a33d]/50 hover:shadow-md hover:scale-[1.02]"
                 >
                   <Image
                     src={partner.logo}
                     alt={partner.name}
                     fill
-                    className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain p-5 transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </section>

@@ -13,8 +13,8 @@ export function SiteFooter({ locale }: SiteFooterProps) {
     <footer className="mt-20 bg-[#111] px-4 py-10 text-white md:px-8">
       <div className="mx-auto grid w-full max-w-7xl gap-8 md:grid-cols-3">
         <div>
-          <div className="mb-3 inline-flex rounded-xl bg-white px-2 py-1">
-            <Image src="/assets/logo.svg" alt="Marafeq Al-Banaa logo" width={122} height={48} />
+          <div className="mb-3 inline-flex rounded-xl px-2 py-1">
+            <Image src="/assets/image_white.svg" alt="Marafeq Al-Banaa logo" width={122} height={48} />
           </div>
           <h3 className="mb-3 text-lg font-semibold text-[#e8a33d]">{t.siteName}</h3>
           <p className="text-sm text-white/75">

@@ -82,7 +82,7 @@ export default async function Home({ params }: HomeProps) {
                 {t.ctaQuote}
                 <ArrowRight size={16} className={rtl ? "rotate-180" : ""} />
               </Link>
-              <Link href={`/${locale}/about`} className="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10">
+              <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10">
                 {t.ctaContact}
               </Link>
             </div>

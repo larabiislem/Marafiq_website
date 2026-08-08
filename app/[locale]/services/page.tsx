@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
@@ -25,11 +26,21 @@ export default async function ServicesPage({ params }: ServicesProps) {
           <StaggerItem key={service.slug}>
             <Link
               href={`/${rawLocale}/services/${service.slug}`}
-              className="hover-lift block rounded-2xl border border-zinc-200 bg-white p-6"
+              className="hover-lift block overflow-hidden rounded-2xl border border-zinc-200 bg-white"
             >
-              <ServiceIcon icon={service.icon} />
-              <h2 className="mt-4 text-lg font-semibold">{service[rawLocale].title}</h2>
-              <p className="mt-2 text-sm text-zinc-600">{service[rawLocale].description}</p>
+              <div className="relative h-40 w-full overflow-hidden bg-zinc-100">
+                <Image
+                  src={service.image}
+                  alt={service[rawLocale].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <ServiceIcon icon={service.icon} />
+                <h2 className="mt-4 text-lg font-semibold">{service[rawLocale].title}</h2>
+                <p className="mt-2 text-sm text-zinc-600">{service[rawLocale].description}</p>
+              </div>
             </Link>
           </StaggerItem>
         ))}

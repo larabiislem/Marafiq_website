@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
-import { dictionary, isLocale, isRtl, Locale, partners, projectItems, services } from "@/lib/site-content";
+import { dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
 import { notFound } from "next/navigation";
 
 type HomeProps = {
@@ -15,7 +14,6 @@ export default async function Home({ params }: HomeProps) {
   if (!isLocale(rawLocale)) notFound();
   const locale: Locale = rawLocale;
   const t = dictionary[locale];
-  const featuredProjects = projectItems.slice(0, 6);
   const capabilityCards = [
     {
       titleEn: "Mechanical and Electrical Engineering Execution",
@@ -52,13 +50,13 @@ export default async function Home({ params }: HomeProps) {
         <div className="relative mx-auto flex w-full max-w-7xl flex-col items-start px-4 py-24 text-white md:px-8">
           <FadeIn className="max-w-3xl">
             <div className="float-slow mb-7 inline-flex">
-            <Image
-              src="/assets/image.svg"
-              alt="Marafeq Al-Banaa Arabic logo in SVG"
-              width={250}
-              height={92}
-              priority
-            />
+              <Image
+                src="/assets/image.svg"
+                alt="Marafeq Al-Banaa Arabic logo in SVG"
+                width={250}
+                height={92}
+                priority
+              />
             </div>
             <p className="mb-3 text-xs uppercase tracking-[0.25em] text-[#f5c06e]">
               Marafeq Al-Banaa
@@ -92,11 +90,21 @@ export default async function Home({ params }: HomeProps) {
             <StaggerItem key={service.slug}>
               <Link
                 href={`/${locale}/services/${service.slug}`}
-                className="hover-lift block rounded-2xl border border-zinc-200 bg-white p-6"
+                className="hover-lift block overflow-hidden rounded-2xl border border-zinc-200 bg-white"
               >
-                <ServiceIcon icon={service.icon} />
-                <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
-                <p className="mt-2 text-sm text-zinc-600">{service[locale].description}</p>
+                <div className="relative h-40 w-full overflow-hidden bg-zinc-100">
+                  <Image
+                    src={service.image}
+                    alt={service[locale].title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <ServiceIcon icon={service.icon} />
+                  <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
+                  <p className="mt-2 text-sm text-zinc-600">{service[locale].description}</p>
+                </div>
               </Link>
             </StaggerItem>
           ))}
@@ -138,52 +146,30 @@ export default async function Home({ params }: HomeProps) {
         </div>
       </section>
 
-      <section className="bg-[var(--brand-gray)] py-16">
-        <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+      <section className="mx-auto w-full max-w-7xl px-4 pb-16 md:px-8">
+        <FadeIn>
+          <h2 className="text-3xl font-bold">{t.about.title}</h2>
+          <p className="mt-4 max-w-4xl text-zinc-700">{t.about.intro}</p>
+        </FadeIn>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           <FadeIn>
-            <h2 className="text-3xl font-bold">{t.home.whyTitle}</h2>
+            <article className="rounded-2xl bg-[var(--brand-gray)] p-7">
+              <h3 className="text-2xl font-semibold text-[#b7781f]">{t.about.visionTitle}</h3>
+              <p className="mt-3 text-zinc-700">{t.about.vision}</p>
+            </article>
           </FadeIn>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {t.home.metrics.map((metric) => (
-              <FadeIn key={metric.label}>
-                <div className="hover-lift rounded-xl bg-white p-6">
-                  <p className="text-3xl font-bold text-[#e8a33d]">{metric.value}</p>
-                  <p className="mt-2 text-sm text-zinc-600">{metric.label}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn delay={0.1}>
+            <article className="rounded-2xl bg-[var(--brand-gray)] p-7">
+              <h3 className="text-2xl font-semibold text-[#b7781f]">{t.about.missionTitle}</h3>
+              <p className="mt-3 text-zinc-700">{t.about.mission}</p>
+            </article>
+          </FadeIn>
         </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8">
-        <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-bold">{t.home.featuredProjects}</h2>
-          <Link
-            href={`/${locale}/projects`}
-            className="inline-flex items-center gap-1 text-sm font-semibold text-[#c17f1f]"
-          >
-            {t.home.viewAllProjects}
-            <ArrowRight size={16} />
+        <div className="mt-6 text-right">
+          <Link href={`/${locale}/about`} className="text-sm font-semibold text-[#c17f1f]">
+            {locale === "en" ? "Learn more about us" : "المزيد عنا"} →
           </Link>
         </div>
-        <Stagger className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <StaggerItem key={project.titleEn}>
-              <article className="hover-lift rounded-2xl border border-zinc-200 bg-white">
-                <div className="p-5">
-                  <h3 className="font-semibold">
-                    {locale === "en" ? project.titleEn : project.titleAr}
-                  </h3>
-                  <p className="mt-1 text-sm text-zinc-600">{project.location}</p>
-                  <p className="mt-2 text-sm text-zinc-500">
-                    {locale === "en" ? project.typeEn : project.typeAr}
-                  </p>
-                </div>
-              </article>
-            </StaggerItem>
-          ))}
-        </Stagger>
       </section>
 
       <section className="overflow-hidden bg-[#101010] py-14 text-white">

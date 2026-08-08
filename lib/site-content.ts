@@ -19,13 +19,14 @@ export const services = [
   {
     slug: "electromechanical",
     icon: "bolt",
+    image: "/assets/Electromechanical Works.png",
     en: {
       title: "Electromechanical Works",
       description:
         "Integrated mechanical, electrical, and plumbing execution covering power, control, and technical infrastructure with strict safety standards.",
     },
     ar: {
-      title: "الأعمال الكهروميكانيكية",
+      title: "الأعمال الكهربائية والميكانيكية",
       description:
         "تنفيذ متكامل لأعمال الميكانيكا والكهرباء والبنية التحتية وفق أعلى معايير السلامة والجودة.",
     },
@@ -33,13 +34,14 @@ export const services = [
   {
     slug: "hvac",
     icon: "fan",
+    image: "/assets/PLACEHOLDER_HVAC.png",
     en: {
-      title: "HVAC Systems",
+      title: "HVAC Systems (Air-Conditioning & Cooling)",
       description:
         "Design, installation, and maintenance of efficient cooling and ventilation systems for residential and commercial spaces.",
     },
     ar: {
-      title: "أنظمة التكييف والتهوية",
+      title: "أنظمة التكييف والتبريد",
       description:
         "تصميم وتركيب وصيانة أنظمة تكييف وتهوية عالية الكفاءة للمشاريع السكنية والتجارية.",
     },
@@ -47,41 +49,59 @@ export const services = [
   {
     slug: "plumbing",
     icon: "droplets",
+    image: "/assets/Plumbing,Systems.png",
     en: {
       title: "Plumbing & Sanitary Systems",
       description:
         "Reliable piping, water supply, and drainage solutions for long-lasting building performance.",
     },
     ar: {
-      title: "السباكة والأنظمة الصحية",
+      title: "أنظمة السباكة والصرف الصحي",
       description:
         "حلول موثوقة لشبكات المياه والصرف والتمديدات الصحية لضمان استدامة وكفاءة المبنى.",
     },
   },
   {
     slug: "low-voltage",
-    icon: "shield",
+    icon: "cable",
+    image: "/assets/service-low-voltage.png",
     en: {
-      title: "Low-Voltage Systems",
+      title: "Low-Voltage Works",
       description:
-        "Smart low-current systems including security, access control, and structured communication cabling.",
+        "Smart low-current systems including access control and structured communication cabling.",
     },
     ar: {
-      title: "أنظمة التيار الخفيف",
+      title: "أعمال الجهد المنخفض",
       description:
-        "أنظمة ذكية تشمل الأمن والتحكم بالدخول وتمديدات الاتصالات والشبكات للمباني الحديثة.",
+        "أنظمة ذكية تشمل التحكم بالدخول وتمديدات الاتصالات والشبكات للمباني الحديثة.",
+    },
+  },
+  {
+    slug: "security",
+    icon: "shield",
+    image: "/assets/PLACEHOLDER_SECURITY.png",
+    en: {
+      title: "Security Systems",
+      description:
+        "Integrated security systems including CCTV, alarms, and safety monitoring for industrial, commercial, and residential facilities.",
+    },
+    ar: {
+      title: "أنظمة الأمان",
+      description:
+        "أنظمة أمنية متكاملة تشمل كاميرات المراقبة والإنذار ومراقبة السلامة للمنشآت الصناعية والتجارية والسكنية.",
     },
   },
   {
     slug: "cleaning",
     icon: "sparkles",
+    image: "/assets/service-cleaning.png",
     en: {
-      title: "Professional Cleaning Services",
+      title: "Professional Cleaning for Industrial, Commercial & Residential",
       description:
         "Industrial, commercial, and residential cleaning operations delivered by trained teams and professional tools.",
     },
     ar: {
-      title: "خدمات التنظيف الاحترافية",
+      title: "خدمات تنظيف احترافية للاحتياجات الصناعية والتجارية والسكنية",
       description:
         "خدمات تنظيف صناعية وتجارية وسكنية بواسطة فرق مدربة ومعدات احترافية.",
     },

@@ -103,7 +103,7 @@ export const partners = [
   { name: "Ideal Standard", logo: "/assets/idealstandar.png" },
   { name: "hansgrohe", logo: "/assets/hansgrohe.png" },
   { name: "Entrecôte Café de Paris", logo: "/assets/entrecote.png" },
-  { name: "Koyikodan Restaurant", logo: "/assets/koyikodan.png" },
+  { name: "Classico Diet", logo: "/assets/classico-diet.png" },
   { name: "Opinion", logo: "/assets/opinion.jpg" },
   { name: "COSMO", logo: "/assets/cosmo.png" },
 ];

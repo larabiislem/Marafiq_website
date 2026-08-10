@@ -15,16 +15,49 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Marafeq Al-Banaa | Integrated Construction & Facility Solutions",
+  title: {
+    default: "مرافق البناء | حلول إنشائية متكاملة",
+    template: "%s | مرافق البناء",
+  },
   description:
-    "Marafeq Al-Banaa company website for construction, mechanical and electrical contracting, plumbing systems, and integrated facility management services in KSA.",
+    "مرافق البناء - شركة سعودية متخصصة في الإنشاءات والمقاولات الكهروميكانيكية، أنظمة السباكة، وإدارة المرافق المتكاملة.",
   metadataBase: new URL("https://marafeqalbnaa.com"),
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
+  openGraph: {
+    title: "مرافق البناء | حلول إنشائية متكاملة",
+    description:
+      "خدمات احترافية في الإنشاءات والأنظمة الميكانيكية والكهربائية والسباكة وإدارة المرافق لضمان كفاءة طويلة الأمد.",
+    url: "https://marafeqalbnaa.com",
+    siteName: "مرافق البناء - Marafeq Al-Banaa",
+    locale: "ar_SA",
+    type: "website",
+    images: [
+      {
+        url: "/assets/logo.png",
+        width: 800,
+        height: 600,
+        alt: "شعار مرافق البناء Marafeq Al-Banaa Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "مرافق البناء | حلول إنشائية متكاملة",
+    description:
+      "خدمات احترافية في الإنشاءات والأنظمة الميكانيكية والكهربائية والسباكة وإدارة المرافق.",
+    images: ["/assets/logo.png"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="ar"
+      dir="rtl"
       className={`${poppins.variable} ${cairo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

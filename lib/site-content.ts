@@ -102,6 +102,10 @@ export const partners = [
   { name: "Tredex", logo: "/assets/Tredex.png" },
   { name: "Ideal Standard", logo: "/assets/idealstandar.png" },
   { name: "hansgrohe", logo: "/assets/hansgrohe.png" },
+  { name: "Entrecôte Café de Paris", logo: "/assets/entrecote.png" },
+  { name: "Koyikodan Restaurant", logo: "/assets/koyikodan.png" },
+  { name: "Opinion", logo: "/assets/opinion.jpg" },
+  { name: "COSMO", logo: "/assets/cosmo.png" },
 ];
 
 export const projectItems = [
@@ -206,7 +210,7 @@ export const dictionary = {
       whyTitle: "Why Choose Us",
       featuredProjects: "Featured Projects",
       viewAllProjects: "View All Projects",
-      partnersTitle: "Trusted Supply Chain Partners",
+      partnersTitle: "Partners of Success",
       metrics: [
         { label: "Years of Experience", value: "15+" },
         { label: "Completed Projects", value: "320+" },
@@ -293,7 +297,7 @@ export const dictionary = {
       whyTitle: "لماذا نحن",
       featuredProjects: "مشاريع مميزة",
       viewAllProjects: "عرض كل المشاريع",
-      partnersTitle: "شركاء سلسلة توريد موثوقون",
+      partnersTitle: "شركاء النجاح",
       metrics: [
         { label: "سنوات الخبرة", value: "+15" },
         { label: "مشروع مكتمل", value: "+320" },

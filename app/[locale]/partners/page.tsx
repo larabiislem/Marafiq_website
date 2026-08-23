@@ -20,9 +20,9 @@ export default async function PartnersPage({ params }: PartnersProps) {
 
       <Stagger className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {partners.map((partner) => (
-          <StaggerItem key={partner}>
+          <StaggerItem key={partner.name}>
             <div className="hover-lift flex h-36 items-center justify-center rounded-2xl border border-zinc-200 bg-white p-5 text-center">
-              <p className="font-medium">{partner}</p>
+              <p className="font-medium">{partner.name}</p>
             </div>
           </StaggerItem>
         ))}

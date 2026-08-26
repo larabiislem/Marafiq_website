@@ -219,20 +219,20 @@ export const dictionary = {
       ],
     },
     about: {
-      title: "Building with Quality, Delivering with Integrity",
+      title: "Integrated Solutions, One Reliable Team",
       intro:
-        "Marafeq Facility Operations is a Saudi company specialized in construction support, mechanical and electrical contracting, plumbing infrastructure, and integrated facility services for residential, commercial, and industrial sectors.",
+        "Marafeq Facility Operations provides integrated solutions for operating, maintaining, and cleaning facilities and properties. We serve companies, restaurants, cafés, commercial and residential buildings, and owners associations through flexible contracts tailored to each site.",
       visionTitle: "Vision",
       vision:
-        "To become a leading Saudi reference for reliable and sustainable building services.",
+        "A trusted partner in keeping facilities efficient, ready, and well maintained.",
       missionTitle: "Mission",
       mission:
-        "To deliver integrated technical services that ensure safety, performance, and long-term value for every client.",
+        "Coordinated maintenance, cleaning, and property support through one accountable team.",
       promiseTitle: "Our Promise",
       promise:
-        "We commit to quality execution, transparent communication, and on-time project delivery.",
+        "One team, one contract, and clear follow-up — so you focus on your business, not your facility.",
       valuesTitle: "Core Values",
-      values: ["Quality", "Innovation", "Sustainability", "Reliability"],
+      values: ["Quality", "Reliability", "Accountability", "Flexibility"],
     },
     services: {
       title: "Our Services",
@@ -306,18 +306,18 @@ export const dictionary = {
       ],
     },
     about: {
-      title: "نبني بالجودة وننجز بالثقة",
+      title: "حلول متكاملة، فريق واحد موثوق",
       intro:
-        "مرافق التشغيل شركة سعودية متخصصة في دعم أعمال البناء والمقاولات الكهروميكانيكية وخدمات المرافق المتكاملة للقطاعات السكنية والتجارية والصناعية.",
+        "نقدم حلولاً متكاملة لإدارة وتشغيل وصيانة وتنظيف المرافق والعقارات. تجمع الخدمات الفنية والنظافة ضمن جهة واحدة. نخدم الشركات والمطاعم والمقاهي والمباني السكنية والتجارية واتحادات الملاك من خلال عقود مرنة مصممة حسب احتياج كل موقع.",
       visionTitle: "الرؤية",
-      vision: "أن نكون مرجعاً سعودياً رائداً في خدمات البناء الموثوقة والمستدامة.",
+      vision: "أن نكون شريكاً موثوقاً في الحفاظ على كفاءة المرافق وجاهزيتها.",
       missionTitle: "الرسالة",
       mission:
-        "تقديم خدمات تقنية متكاملة تحقق السلامة والأداء والقيمة طويلة المدى لكل عميل.",
+        "تقديم صيانة ونظافة ودعم تشغيلي متكامل من خلال فريق واحد وتنسيق واضح.",
       promiseTitle: "وعدنا",
-      promise: "نلتزم بجودة التنفيذ ووضوح التواصل والتسليم في الوقت المحدد.",
+      promise: "فريق واحد، عقد واحد، ومتابعة واضحة — حتى تركّز على عملك لا على مرافقك.",
       valuesTitle: "القيم الأساسية",
-      values: ["الجودة", "الابتكار", "الاستدامة", "الاعتمادية"],
+      values: ["الجودة", "الاعتمادية", "المسؤولية", "المرونة"],
     },
     services: {
       title: "خدماتنا",

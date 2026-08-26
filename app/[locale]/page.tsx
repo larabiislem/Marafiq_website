@@ -87,46 +87,45 @@ export default async function Home({ params }: HomeProps) {
               </div>
             </FadeIn>
           </div>
-          {/* DYNAMIC PROFESSIONAL GALLERY */}
-          <div className="lg:w-1/2 hidden md:flex gap-5 w-full justify-center items-center h-[600px] overflow-hidden relative" style={{ maskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)" }}>
-            {/* Column 1 */}
-            <div className="flex flex-col gap-5 w-1/2 animate-float1">
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/project-p2.jpg" alt="Cleaning Services" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/hero-gallery-1.jpg" alt="HVAC Maintenance" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/project-p1.jpg" alt="Technical Maintenance" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/hero-gallery-5.jpg" alt="Industrial Cleaning" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
+          {/* DYNAMIC SCATTERED GALLERY - NON OVERLAPPING */}
+          <div className="lg:w-1/2 hidden md:block relative w-full h-[600px] lg:h-[750px]">
+            
+            {/* Top Left */}
+            <div className="absolute top-[2%] left-[0%] w-[26%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float1 z-10 group">
+              <Image src="/assets/project-p2.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
             </div>
-            {/* Column 2 (Staggered) */}
-            <div className="flex flex-col gap-5 w-1/2 pt-24 animate-float2">
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/project-p5.jpg" alt="Industrial Maintenance" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/project-p3.jpg" alt="Team Deployment" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/hero-gallery-4.jpg" alt="Facility Operations" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image src="/assets/project-p4.jpg" alt="Furniture Cleaning" fill className="object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
-              </div>
+
+            {/* Top Middle */}
+            <div className="absolute top-[6%] left-[32%] w-[32%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float2 z-0 group">
+              <Image src="/assets/project-p1.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
             </div>
+
+            {/* Top Right */}
+            <div className="absolute top-[0%] left-[70%] w-[28%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float3 z-10 group">
+              <Image src="/assets/hero-gallery-1.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
+            </div>
+
+            {/* Middle Left (Team) */}
+            <div className="absolute top-[40%] left-[5%] w-[24%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float4 z-20 group">
+              <Image src="/assets/project-p3.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
+            </div>
+
+            {/* Center (Largest) */}
+            <div className="absolute top-[42%] left-[35%] w-[36%] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#e8a33d]/30 animate-float1 z-30 group">
+              <Image src="/assets/project-p5.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            </div>
+
+            {/* Middle Right */}
+            <div className="absolute top-[35%] left-[76%] w-[22%] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float2 z-10 group">
+              <Image src="/assets/project-p4.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
+            </div>
+
+            {/* Bottom Right */}
+            <div className="absolute top-[75%] left-[45%] w-[40%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float3 z-10 group">
+              <Image src="/assets/hero-gallery-4.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
+            </div>
+
           </div>
         </div>
       </section>

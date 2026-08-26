@@ -88,26 +88,43 @@ export default async function Home({ params }: HomeProps) {
             </FadeIn>
           </div>
           {/* DYNAMIC PROFESSIONAL GALLERY */}
-          <div className="lg:w-1/2 hidden md:flex gap-6 w-full justify-center items-center">
+          <div className="lg:w-1/2 hidden md:flex gap-5 w-full justify-center items-center h-[600px] overflow-hidden relative" style={{ maskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)" }}>
             {/* Column 1 */}
-            <div className="flex flex-col gap-6 w-1/2 animate-float1">
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                <Image src="/assets/hero-gallery-1.jpg" alt="Project 1" fill className="object-cover" />
+            <div className="flex flex-col gap-5 w-1/2 animate-float1">
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/project-p2.jpg" alt="Cleaning Services" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
               </div>
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                <Image src="/assets/hero-gallery-2.jpg" alt="Project 2" fill className="object-cover" />
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/hero-gallery-1.jpg" alt="HVAC Maintenance" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
               </div>
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                <Image src="/assets/hero-gallery-5.jpg" alt="Project 5" fill className="object-cover" />
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/project-p1.jpg" alt="Technical Maintenance" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
+              </div>
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/hero-gallery-5.jpg" alt="Industrial Cleaning" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
               </div>
             </div>
             {/* Column 2 (Staggered) */}
-            <div className="flex flex-col gap-6 w-1/2 pt-16 animate-float2">
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                <Image src="/assets/hero-gallery-3.jpg" alt="Project 3" fill className="object-cover" />
+            <div className="flex flex-col gap-5 w-1/2 pt-24 animate-float2">
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/project-p5.jpg" alt="Industrial Maintenance" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
               </div>
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                <Image src="/assets/hero-gallery-4.jpg" alt="Project 4" fill className="object-cover" />
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/project-p3.jpg" alt="Team Deployment" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
+              </div>
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/hero-gallery-4.jpg" alt="Facility Operations" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
+              </div>
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image src="/assets/project-p4.jpg" alt="Furniture Cleaning" fill className="object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[#e8a33d]/20 opacity-0 transition group-hover:opacity-100" />
               </div>
             </div>
           </div>

@@ -42,16 +42,24 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-50 bg-[#111]/95 text-white shadow-lg backdrop-blur">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-8">
-        <Link href={`/${locale}`} className="flex items-center gap-3">
+        <Link href={`/${locale}`} className="flex items-center gap-4 hover:opacity-90 transition-opacity">
           <div className="py-1">
             <Image
               src="/assets/logo_white.png"
               alt={`${companyInfo.nameEn} logo`}
               width={240}
               height={80}
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-14 md:h-16 w-auto object-contain"
               priority
             />
+          </div>
+          <div className="hidden sm:flex flex-col">
+            <span className="text-lg font-bold leading-none text-[#e8a33d]">
+              {locale === 'en' ? companyInfo.nameEn : companyInfo.nameAr}
+            </span>
+            <span className="text-[10px] font-medium tracking-widest text-white/70 uppercase mt-1">
+              Facility Operations
+            </span>
           </div>
         </Link>
 

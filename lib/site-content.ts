@@ -257,6 +257,7 @@ export const dictionary = {
     },
     ctaQuote: "Request a Quote",
     ctaContact: "Contact Us",
+    ctaProfile: "Download Profile",
     heroTitle: "Complete Solution, For Lasting Quality",
     heroSubtitle:
       "Professional construction, mechanical systems, electrical systems, plumbing, and facility services engineered for dependable long-term performance.",
@@ -344,6 +345,7 @@ export const dictionary = {
     },
     ctaQuote: "اطلب عرض سعر",
     ctaContact: "تواصل معنا",
+    ctaProfile: "تحميل الملف التعريفي",
     heroTitle: "حلول متكاملة، لجودة تدوم",
     heroSubtitle:
       "خدمات احترافية في الإنشاءات والأنظمة الميكانيكية والكهربائية والسباكة وإدارة المرافق لضمان كفاءة طويلة الأمد.",

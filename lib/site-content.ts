@@ -2,8 +2,8 @@ export const locales = ["ar", "en"] as const;
 export type Locale = (typeof locales)[number];
 
 export const companyInfo = {
-  nameEn: "Marafeq Al-Banaa",
-  nameAr: "مرافق البناء",
+  nameEn: "Marafeq Facility Operations",
+  nameAr: "مرافق التشغيل",
   addressEn: "Al Jawharah, Al Khobar 34434, Kingdom of Saudi Arabia",
   addressAr: "الجوهرة، الخبر 34434، المملكة العربية السعودية",
   phone: "+966530555067",
@@ -221,7 +221,7 @@ export const dictionary = {
     about: {
       title: "Building with Quality, Delivering with Integrity",
       intro:
-        "Marafeq Al-Banaa is a Saudi company specialized in construction support, mechanical and electrical contracting, plumbing infrastructure, and integrated facility services for residential, commercial, and industrial sectors.",
+        "Marafeq Facility Operations is a Saudi company specialized in construction support, mechanical and electrical contracting, plumbing infrastructure, and integrated facility services for residential, commercial, and industrial sectors.",
       visionTitle: "Vision",
       vision:
         "To become a leading Saudi reference for reliable and sustainable building services.",
@@ -308,7 +308,7 @@ export const dictionary = {
     about: {
       title: "نبني بالجودة وننجز بالثقة",
       intro:
-        "مرافق البناء شركة سعودية متخصصة في دعم أعمال البناء والمقاولات الكهروميكانيكية وخدمات المرافق المتكاملة للقطاعات السكنية والتجارية والصناعية.",
+        "مرافق التشغيل شركة سعودية متخصصة في دعم أعمال البناء والمقاولات الكهروميكانيكية وخدمات المرافق المتكاملة للقطاعات السكنية والتجارية والصناعية.",
       visionTitle: "الرؤية",
       vision: "أن نكون مرجعاً سعودياً رائداً في خدمات البناء الموثوقة والمستدامة.",
       missionTitle: "الرسالة",

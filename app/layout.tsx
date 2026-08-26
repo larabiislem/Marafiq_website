@@ -16,11 +16,11 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: {
-    default: "مرافق البناء | حلول إنشائية متكاملة",
-    template: "%s | مرافق البناء",
+    default: "مرافق التشغيل | حلول تشغيلية وإنشائية متكاملة",
+    template: "%s | مرافق التشغيل",
   },
   description:
-    "مرافق البناء - شركة سعودية متخصصة في الإنشاءات والمقاولات الكهروميكانيكية، أنظمة السباكة، وإدارة المرافق المتكاملة.",
+    "مرافق التشغيل - شركة سعودية متخصصة في الإنشاءات والمقاولات الكهروميكانيكية، أنظمة السباكة، وإدارة المرافق المتكاملة.",
   metadataBase: new URL("https://marafeqalbnaa.com"),
   icons: {
     icon: "/icon.png",
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "مرافق البناء | حلول إنشائية متكاملة",
+    title: "مرافق التشغيل | حلول تشغيلية وإنشائية متكاملة",
     description:
       "خدمات احترافية في الإنشاءات والأنظمة الميكانيكية والكهربائية والسباكة وإدارة المرافق لضمان كفاءة طويلة الأمد.",
     url: "https://marafeqalbnaa.com",
-    siteName: "مرافق البناء - Marafeq Al-Banaa",
+    siteName: "مرافق التشغيل - Marafeq Facility Operations",
     locale: "ar_SA",
     type: "website",
     images: [
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
         url: "/assets/logo.png",
         width: 800,
         height: 600,
-        alt: "شعار مرافق البناء Marafeq Al-Banaa Logo",
+        alt: "شعار مرافق التشغيل Marafeq Facility Operations Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "مرافق البناء | حلول إنشائية متكاملة",
+    title: "مرافق التشغيل | حلول تشغيلية وإنشائية متكاملة",
     description:
       "خدمات احترافية في الإنشاءات والأنظمة الميكانيكية والكهربائية والسباكة وإدارة المرافق.",
     images: ["/assets/logo.png"],

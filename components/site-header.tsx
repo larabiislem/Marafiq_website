@@ -43,20 +43,15 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
     <header className="sticky top-0 z-50 bg-[#111]/95 text-white shadow-lg backdrop-blur">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <Link href={`/${locale}`} className="flex items-center gap-3">
-          <div className="rounded-xl px-2 py-1">
+          <div className="py-1">
             <Image
-              src="/assets/image_white.svg"
-              alt="Marafeq Al-Banaa logo"
-              width={118}
-              height={44}
+              src="/assets/logo_white.png"
+              alt={`${companyInfo.nameEn} logo`}
+              width={240}
+              height={80}
+              className="h-16 md:h-20 w-auto object-contain"
               priority
             />
-          </div>
-          <div className="leading-tight">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-[#e8a33d]">
-              Marafeq Al-Banaa
-            </p>
-            <p className="text-base font-semibold text-white">{companyInfo.nameAr}</p>
           </div>
         </Link>
 

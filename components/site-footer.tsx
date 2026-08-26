@@ -13,8 +13,8 @@ export function SiteFooter({ locale }: SiteFooterProps) {
     <footer className="mt-20 bg-[#111] px-4 py-10 text-white md:px-8">
       <div className="mx-auto grid w-full max-w-7xl gap-8 md:grid-cols-3">
         <div>
-          <div className="mb-3 inline-flex rounded-xl px-2 py-1">
-            <Image src="/assets/image_white.svg" alt="Marafeq Al-Banaa logo" width={122} height={48} />
+          <div className="mb-3 inline-flex py-1">
+            <Image src="/assets/logo_white.png" alt={`${companyInfo.nameEn} logo`} width={160} height={50} className="h-12 w-auto object-contain" />
           </div>
           <h3 className="mb-3 text-lg font-semibold text-[#e8a33d]">{t.siteName}</h3>
           <p className="text-sm text-white/75">
@@ -50,7 +50,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         </div>
       </div>
       <div className="mx-auto mt-8 w-full max-w-7xl border-t border-white/10 pt-6 text-xs text-white/60">
-        © {new Date().getFullYear()} Marafeq Al-Banaa.{" "}
+        © {new Date().getFullYear()} {companyInfo.nameEn}.{" "}
         {locale === "en" ? "All rights reserved." : "جميع الحقوق محفوظة."}
       </div>
     </footer>

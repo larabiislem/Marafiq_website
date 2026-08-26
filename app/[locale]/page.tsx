@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2, Zap, Wind, Droplets } from "lucide-react";
 import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
-import { dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
+import { companyInfo, dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
 import { notFound } from "next/navigation";
 
 type HomeProps = {
@@ -67,11 +67,11 @@ export default async function Home({ params }: HomeProps) {
 
         <div className="relative mx-auto w-full max-w-7xl px-6 py-28 md:px-12">
           <FadeIn>
-            <div className="float-slow mb-10 inline-block">
-              <Image src="/assets/image.svg" alt="Marafeq Al-Banaa" width={220} height={80} priority />
+            <div className="float-slow mb-8 inline-block">
+              <Image src="/assets/logo_white.png" alt={companyInfo.nameEn} width={260} height={90} className="h-20 w-auto object-contain" priority />
             </div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#f5c06e]">
-              Marafeq Al-Banaa · مرافق البناء
+              {companyInfo.nameEn} · {companyInfo.nameAr}
             </p>
             <h1 className="max-w-4xl text-5xl font-bold leading-[1.1] text-white md:text-7xl">
               {t.heroTitle}

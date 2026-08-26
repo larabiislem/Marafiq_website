@@ -27,8 +27,8 @@ export async function generateMetadata({
 
   const title =
     rawLocale === "en"
-      ? "Marafeq Al-Banaa | Integrated Construction & Facility Solutions"
-      : "مرافق البناء | حلول إنشائية متكاملة";
+      ? "Marafeq Facility Operations | Integrated Facility & Construction Solutions"
+      : "مرافق التشغيل | حلول تشغيلية وإنشائية متكاملة";
   const description = dictionary[rawLocale].heroSubtitle;
 
   return {
@@ -45,7 +45,7 @@ export async function generateMetadata({
       title,
       description,
       url: `https://marafeqalbnaa.com/${rawLocale}`,
-      siteName: rawLocale === "en" ? "Marafeq Al-Banaa" : "مرافق البناء",
+      siteName: rawLocale === "en" ? "Marafeq Facility Operations" : "مرافق التشغيل",
       locale: rawLocale === "en" ? "en_US" : "ar_SA",
       type: "website",
       images: [

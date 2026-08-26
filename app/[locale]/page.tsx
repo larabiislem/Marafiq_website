@@ -1,32 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, Flag, HeartHandshake } from "lucide-react";
-import { FadeIn } from "@/components/animated";
+import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2, Zap, Wind, Droplets } from "lucide-react";
+import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
+import { ServiceIcon } from "@/components/service-icon";
+
 import { StatsSection } from "@/components/stats-section";
-import { InteractiveServices } from "@/components/interactive-services";
-import { companyInfo, dictionary, isLocale, isRtl, Locale, partners } from "@/lib/site-content";
+import { companyInfo, dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
 import { notFound } from "next/navigation";
 
 type HomeProps = {
   params: Promise<{ locale: string }>;
 };
-
 export default async function Home({ params }: HomeProps) {
   const { locale: rawLocale } = await params;
   if (!isLocale(rawLocale)) notFound();
   const locale: Locale = rawLocale;
   const t = dictionary[locale];
   const rtl = isRtl(locale);
-
+  const capabilityCards = [
+    {
+      icon: Zap,
+      number: "01",
+      titleEn: "Mechanical and Electrical Engineering",
+      titleAr: "الهندسة الميكانيكية والكهربائية",
+      textEn: "Complete planning and execution of electrical distribution, mechanical equipment, and integrated technical infrastructure with quality controls on every phase.",
+      textAr: "تخطيط وتنفيذ شامل لشبكات الكهرباء والمعدات الميكانيكية والبنية الفنية المتكاملة مع رقابة جودة دقيقة في جميع المراحل.",
+      tag: locale === "en" ? "Electromechanical" : "كهروميكانيكية",
+      checklistEn: ["Electrical distribution networks", "Mechanical equipment installation", "Technical infrastructure integration", "Phase-by-phase quality control"],
+      checklistAr: ["شبكات توزيع الكهرباء", "تركيب المعدات الميكانيكية", "تكامل البنية الفنية", "رقابة الجودة في كل مرحلة"],
+      accent: "#e8a33d",
+    },
+    {
+      icon: Wind,
+      number: "02",
+      titleEn: "Heating, Ventilation & Air Conditioning",
+      titleAr: "التدفئة والتهوية وتكييف الهواء",
+      textEn: "Energy-efficient climate systems designed for stable temperature control, healthy air flow, and long-term operating reliability.",
+      textAr: "أنظمة مناخية عالية الكفاءة لضبط درجات الحرارة وتوفير تدفق هواء صحي واعتمادية تشغيلية طويلة المدى.",
+      tag: "HVAC",
+      checklistEn: ["Energy-efficient design", "Temperature & humidity control", "Air quality management", "Preventive maintenance plans"],
+      checklistAr: ["تصميم موفر للطاقة", "التحكم في درجة الحرارة والرطوبة", "إدارة جودة الهواء", "خطط الصيانة الوقائية"],
+      accent: "#e8a33d",
+    },
+    {
+      icon: Droplets,
+      number: "03",
+      titleEn: "Plumbing & Sanitary Networks",
+      titleAr: "السباكة والشبكات الصحية",
+      textEn: "Installation and maintenance of water supply, drainage, and sanitary infrastructure tailored to residential and commercial needs.",
+      textAr: "تنفيذ وصيانة شبكات المياه والصرف والبنية الصحية بما يتوافق مع احتياجات المشاريع السكنية والتجارية.",
+      tag: locale === "en" ? "Plumbing" : "سباكة",
+      checklistEn: ["Water supply systems", "Drainage & sewage networks", "Sanitary fixture installation", "Leak detection & testing"],
+      checklistAr: ["أنظمة إمداد المياه", "شبكات الصرف الصحي", "تركيب الأجهزة الصحية", "كشف التسربات والاختبار"],
+      accent: "#e8a33d",
+    },
+  ];
   return (
     <div className="bg-white text-[#1a1a1a]" dir={rtl ? "rtl" : "ltr"}>
-
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden brand-gradient flex items-center">
         <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#e8a33d]/15 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute inset-0 shine" />
-
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-28 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* TEXT CONTENT */}
           <div className="lg:w-1/2">
@@ -52,7 +87,6 @@ export default async function Home({ params }: HomeProps) {
               </div>
             </FadeIn>
           </div>
-
           {/* DYNAMIC PROFESSIONAL GALLERY */}
           <div className="lg:w-1/2 hidden md:flex gap-6 w-full justify-center items-center">
             {/* Column 1 */}
@@ -79,84 +113,168 @@ export default async function Home({ params }: HomeProps) {
           </div>
         </div>
       </section>
-
       <StatsSection locale={locale} />
-
       {/* ─── ABOUT ────────────────────────────────────────────────────────── */}
-      <section id="about" className="bg-white py-24">
+      <section id="about" className="relative overflow-hidden bg-[#0a0a10] py-28 text-white">
+        <div className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 md:px-12">
+          <FadeIn>
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#e8a33d]" />
+              <p className="text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
+                {locale === "en" ? "Who We Are" : "من نحن"}
+              </p>
+            </div>
+            <h2 className="max-w-3xl text-6xl font-bold leading-tight text-white md:text-8xl">
+              {t.about.title}
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60">{t.about.intro}</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {t.about.values.map((v) => (
+                <span key={v} className="rounded-full border border-[#e8a33d]/25 bg-[#e8a33d]/10 px-4 py-1.5 text-xs font-medium text-[#f5c06e]">{v}</span>
+              ))}
+            </div>
+          </FadeIn>
+          <Stagger className="mt-14 grid gap-5 md:grid-cols-3">
+            <StaggerItem>
+              <article className="hover-lift h-full rounded-2xl border border-white/8 bg-white/[0.04] p-8 backdrop-blur">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8a33d]/15">
+                  <Compass className="h-5 w-5 text-[#e8a33d]" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold text-white">{t.about.visionTitle}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/55">{t.about.vision}</p>
+              </article>
+            </StaggerItem>
+            <StaggerItem>
+              <article className="hover-lift h-full rounded-2xl border border-white/8 bg-white/[0.04] p-8 backdrop-blur">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8a33d]/15">
+                  <Flag className="h-5 w-5 text-[#e8a33d]" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold text-white">{t.about.missionTitle}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/55">{t.about.mission}</p>
+              </article>
+            </StaggerItem>
+            <StaggerItem>
+              <article className="hover-lift shine h-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#e8a33d] to-[#c8841d] p-8">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-black/15">
+                  <HeartHandshake className="h-5 w-5 text-[#111]" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold text-[#111]">{t.about.promiseTitle}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#111]/75">{t.about.promise}</p>
+              </article>
+            </StaggerItem>
+          </Stagger>
+        </div>
+      </section>
+      {/* ─── SERVICES ─────────────────────────────────────────────────────── */}
+      <section id="services" className="py-24">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            {/* Left: Text */}
-            <FadeIn>
-              <span className="inline-block mb-4 px-3 py-1 rounded-full bg-[#e8a33d]/15 text-[#c8841d] text-xs font-bold uppercase tracking-widest border border-[#e8a33d]/30">
-                {locale === "en" ? "About Us" : "من نحن"}
-              </span>
-              <h2 className="text-4xl font-extrabold text-[#111] md:text-5xl leading-tight">
-                {t.about.title}
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-zinc-600">{t.about.intro}</p>
-
-              {/* Values */}
-              <div className="mt-6 flex flex-wrap gap-2">
-                {t.about.values.map((v) => (
-                  <span key={v} className="rounded-full border border-zinc-200 bg-zinc-50 px-4 py-1.5 text-xs font-semibold text-zinc-700">
-                    {v}
-                  </span>
-                ))}
-              </div>
-
-              {/* Vision + Mission Cards */}
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-zinc-100 bg-[#f7f7f5] p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Compass className="h-4 w-4 text-[#e8a33d]" />
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#e8a33d]">{t.about.visionTitle}</p>
+          <FadeIn>
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#e8a33d]" />
+              <p className="text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
+                {locale === "en" ? "What We Do" : "ما نقدمه"}
+              </p>
+            </div>
+            <h2 className="max-w-xl text-6xl font-bold leading-tight md:text-7xl">
+              {t.home.serviceOverviewTitle}
+            </h2>
+          </FadeIn>
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <StaggerItem key={service.slug}>
+                <div className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:border-[#e8a33d]/40 hover:shadow-md">
+                  <div className="relative h-44 w-full overflow-hidden bg-zinc-100">
+                    <Image src={service.image} alt={service[locale].title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
-                  <p className="text-sm leading-relaxed text-zinc-700 font-medium">{t.about.vision}</p>
-                </div>
-                <div className="rounded-2xl border border-zinc-100 bg-[#f7f7f5] p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Flag className="h-4 w-4 text-[#e8a33d]" />
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#e8a33d]">{t.about.missionTitle}</p>
-                  </div>
-                  <p className="text-sm leading-relaxed text-zinc-700 font-medium">{t.about.mission}</p>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Right: Promise card + visual accent */}
-            <FadeIn delay={0.15}>
-              <div className="relative">
-                {/* Large gold accent block */}
-                <div className="absolute -top-4 -right-4 h-full w-full rounded-3xl bg-[#e8a33d]/10 -z-10" />
-                <div className="rounded-3xl overflow-hidden border border-zinc-200 bg-[#111] p-8 md:p-10 text-white shadow-xl">
-                  <HeartHandshake className="h-8 w-8 text-[#e8a33d] mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">{t.about.promiseTitle}</h3>
-                  <p className="text-base leading-relaxed text-white/80">{t.about.promise}</p>
-                  <div className="mt-8 pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-center">
-                    <div>
-                      <p className="text-2xl font-black text-[#e8a33d]">100+</p>
-                      <p className="text-xs text-white/60 mt-1">{locale === "ar" ? "مشروع" : "Projects"}</p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-black text-[#e8a33d]">10+</p>
-                      <p className="text-xs text-white/60 mt-1">{locale === "ar" ? "سنوات" : "Years"}</p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-black text-[#e8a33d]">3</p>
-                      <p className="text-xs text-white/60 mt-1">{locale === "ar" ? "خدمات رئيسية" : "Core Services"}</p>
-                    </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <ServiceIcon icon={service.icon} />
+                    <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">{service[locale].description}</p>
+                    <div className="mt-5 h-0.5 w-10 rounded-full bg-[#e8a33d] transition-all duration-300 group-hover:w-16" />
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+      {/* ─── CAPABILITIES ────────────────────────────────────────────────── */}
+      <section id="capabilities" className="overflow-hidden bg-[#0a0a10] py-24 text-white">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+          <FadeIn>
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#e8a33d]" />
+              <p className="text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
+                {locale === "en" ? "Our Capabilities" : "قدراتنا"}
+              </p>
+            </div>
+          </FadeIn>
+          <div className="mt-10 grid gap-6">
+            {capabilityCards.map((card, index) => {
+              const Icon = card.icon;
+              return (
+                <FadeIn key={card.number} delay={index * 0.1}>
+                  <article className="group grid items-stretch overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] transition-all duration-500 hover:border-white/20 hover:bg-white/[0.06] md:grid-cols-[1fr_2fr]">
+                    {/* LEFT — number + icon + tag */}
+                    <div className="relative flex flex-col justify-between border-b border-white/8 p-8 md:border-b-0 md:border-r md:border-white/8 md:p-10">
+                      {/* Big faded number */}
+                      <span className="absolute right-6 top-4 select-none text-[7rem] font-black leading-none text-white/[0.04] md:right-8 md:top-6">
+                        {card.number}
+                      </span>
+                      <div>
+                        {/* Icon circle */}
+                        <div
+                          className="flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110"
+                          style={{ backgroundColor: `${card.accent}20`, border: `1px solid ${card.accent}40` }}
+                        >
+                          <Icon className="h-7 w-7" style={{ color: card.accent }} />
+                        </div>
+                        {/* Tag pill */}
+                        <span
+                          className="mt-5 inline-block rounded-full px-3 py-1 text-xs font-semibold"
+                          style={{ backgroundColor: `${card.accent}15`, color: card.accent, border: `1px solid ${card.accent}30` }}
+                        >
+                          {card.tag}
+                        </span>
+                      </div>
+                      {/* Animated accent bar at bottom */}
+                      <div
+                        className="mt-8 h-0.5 w-12 rounded-full transition-all duration-500 group-hover:w-full"
+                        style={{ backgroundColor: card.accent }}
+                      />
+                    </div>
+                    {/* RIGHT — title + text + checklist */}
+                    <div className="p-8 md:p-10">
+                      <h3 className="text-2xl font-bold leading-snug text-white md:text-3xl">
+                        {locale === "en" ? card.titleEn : card.titleAr}
+                      </h3>
+                      <p className="mt-4 text-sm leading-relaxed text-white/55">
+                        {locale === "en" ? card.textEn : card.textAr}
+                      </p>
+                      {/* Checklist grid */}
+                      <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+                        {(locale === "en" ? card.checklistEn : card.checklistAr).map((item) => (
+                          <li key={item} className="flex items-start gap-2.5">
+                            <CheckCircle2
+                              size={16}
+                              className="mt-0.5 shrink-0"
+                              style={{ color: card.accent }}
+                            />
+                            <span className="text-sm text-white/65">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>
-
-      {/* ─── INTERACTIVE SERVICES ──────────────────────────────────────────── */}
-      <InteractiveServices locale={locale} />
-
       {/* ─── PARTNERS ─────────────────────────────────────────────────────── */}
       <section className="overflow-hidden bg-[#0a0a10] border-t border-white/8 py-16 text-white">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
@@ -167,19 +285,19 @@ export default async function Home({ params }: HomeProps) {
             <h2 className="text-4xl font-bold text-white md:text-5xl">{t.home.partnersTitle}</h2>
           </FadeIn>
           <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-              {partners.map((partner) => (
-                <div
-                  key={partner.name}
-                  className="group relative h-36 w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:border-[#e8a33d]/50 hover:shadow-md hover:scale-[1.02]"
-                >
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    fill
-                    className="object-contain p-5 transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              ))}
+            {partners.map((partner) => (
+              <div
+                key={partner.name}
+                className="group relative h-36 w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:border-[#e8a33d]/50 hover:shadow-md hover:scale-[1.02]"
+              >
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  fill
+                  className="object-contain p-5 transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2, Zap, Wind, Droplets } from "lucide-react";
+import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2, Zap, Wind, Droplets, Download } from "lucide-react";
 import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
+import { HeroSlider } from "@/components/hero-slider";
 
 import { StatsSection } from "@/components/stats-section";
 import { companyInfo, dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
@@ -58,75 +59,39 @@ export default async function Home({ params }: HomeProps) {
   return (
     <div className="bg-white text-[#1a1a1a]" dir={rtl ? "rtl" : "ltr"}>
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen overflow-hidden brand-gradient flex items-center">
-        <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#e8a33d]/15 blur-3xl" />
-        <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute inset-0 shine" />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-28 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* TEXT CONTENT */}
-          <div className="lg:w-1/2">
-            <FadeIn>
-              <div className="float-slow mb-8 inline-block">
-                <Image src="/assets/logo_white.png" alt={companyInfo.nameEn} width={400} height={140} className="h-28 md:h-32 w-auto object-contain" priority />
-              </div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#f5c06e]">
-                {companyInfo.nameEn} · {companyInfo.nameAr}
-              </p>
-              <h1 className="max-w-4xl text-5xl font-bold leading-[1.1] text-white md:text-6xl lg:text-7xl">
-                {t.heroTitle}
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">{t.heroSubtitle}</p>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-8 py-4 text-sm font-semibold text-[#111] shadow-lg transition hover:bg-[#f5c06e]">
-                  {t.ctaQuote}
-                  <ArrowRight size={16} className={rtl ? "rotate-180" : ""} />
-                </Link>
-                <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10">
-                  {t.ctaContact}
-                </Link>
-              </div>
-            </FadeIn>
-          </div>
-          {/* DYNAMIC SCATTERED GALLERY - NON OVERLAPPING */}
-          <div className="lg:w-1/2 hidden md:block relative w-full h-[600px] lg:h-[750px]">
-            
-            {/* Top Left */}
-            <div className="absolute top-[2%] left-[-20%] w-[46%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float1 z-10 group">
-              <Image src="/assets/project-p2.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
-            </div>
+      <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        {/* Full Page Auto Sliding Background */}
+        <HeroSlider />
 
-            {/* Top Middle */}
-            <div className="absolute top-[6%] left-[32%] w-[42%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float2 z-0 group">
-              <Image src="/assets/project-p1.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
-            </div>
+        {/* Floating animated elements on top of the background */}
+        <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#e8a33d]/15 blur-[100px] z-10" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/10 blur-[100px] z-10" />
 
-            {/* Top Right */}
-            <div className="absolute top-[0%] left-[90%] w-[48%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float3 z-10 group">
-              <Image src="/assets/hero-gallery-1.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
+        <div className="relative z-20 mx-auto w-full max-w-5xl px-6 py-28 md:px-12 flex flex-col items-center">
+          <FadeIn>
+            <div className="float-slow mb-10 inline-block">
+              <Image src="/assets/logo_white.png" alt={companyInfo.nameEn} width={400} height={140} className="h-32 md:h-40 w-auto object-contain drop-shadow-2xl" priority />
             </div>
-
-            {/* Middle Left (Team) */}
-            <div className="absolute top-[40%] left-[-35%] w-[44%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float4 z-20 group">
-              <Image src="/assets/project-p3.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-[#f5c06e] drop-shadow-md">
+              {companyInfo.nameEn} · {companyInfo.nameAr}
+            </p>
+            <h1 className="max-w-4xl mx-auto text-5xl font-bold leading-[1.1] text-white md:text-6xl lg:text-7xl drop-shadow-xl">
+              {t.heroTitle}
+            </h1>
+            <p className="mt-8 max-w-3xl mx-auto text-lg leading-relaxed text-white/90 drop-shadow-md">
+              {t.heroSubtitle}
+            </p>
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-5">
+              <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 rounded-full bg-[#e8a33d] px-8 py-4 text-sm font-semibold text-[#111] shadow-lg transition hover:bg-[#f5c06e] hover:scale-105 hover:shadow-[#e8a33d]/20">
+                {t.ctaQuote}
+                <ArrowRight size={16} className={rtl ? "rotate-180" : ""} />
+              </Link>
+              <a href="/documents/company-profile.pdf" target="_blank" rel="noopener noreferrer" download className="inline-flex items-center gap-2 rounded-full border-2 border-white/40 bg-black/20 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10 hover:border-white/60 hover:scale-105">
+                {t.ctaProfile || "Download Profile"}
+                <Download size={16} />
+              </a>
             </div>
-
-            {/* Center (Largest) */}
-            <div className="absolute top-[42%] left-[15%] w-[46%] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#e8a33d]/30 animate-float1 z-30 group">
-              <Image src="/assets/project-p5.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            </div>
-
-            {/* Middle Right */}
-            <div className="absolute top-[35%] left-[66%] w-[42%] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float2 z-10 group">
-              <Image src="/assets/project-p4.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
-            </div>
-
-            {/* Bottom Right */}
-            <div className="absolute top-[75%] left-[45%] w-[50%] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float3 z-10 group">
-              <Image src="/assets/hero-gallery-4.jpg" alt="Gallery" fill className="object-cover transition duration-700 group-hover:scale-110" />
-            </div>
-
-          </div>
+          </FadeIn>
         </div>
       </section>
       <StatsSection locale={locale} />

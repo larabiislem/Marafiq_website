@@ -10,8 +10,7 @@ const slides = [
   { src: "/assets/hero-gallery-3.png", position: "object-center" },
   { src: "/assets/project-p5.jpg", position: "object-center" },
   { src: "/assets/hero-gallery-1.png", position: "object-center" },
-  { src: "/assets/project-p3.jpg", position: "object-[center_20%]" },
-  { src: "/assets/project-p4.jpg", position: "object-center" },
+  { src: "/assets/project-p4.png", position: "object-[center_20%]" },
   { src: "/assets/hero-gallery-2.jpg", position: "object-center" },
   { src: "/assets/hero-gallery-5.jpg", position: "object-center" },
 ];

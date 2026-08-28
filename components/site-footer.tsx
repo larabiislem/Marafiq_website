@@ -14,7 +14,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
       <div className="mx-auto grid w-full max-w-7xl gap-8 md:grid-cols-3">
         <div>
           <div className="mb-3 inline-flex py-1">
-            <Image src="/assets/logo_white.png" alt={`${companyInfo.nameEn} logo`} width={240} height={80} className="h-20 w-auto object-contain" />
+            <Image src="/assets/logo_white.png" alt={`${companyInfo.nameEn} logo`} width={240} height={80} style={{ width: 'auto' }} className="h-20 object-contain" />
           </div>
           <h3 className="mb-3 text-lg font-semibold text-[#e8a33d]">{t.siteName}</h3>
           <p className="text-sm text-white/75">

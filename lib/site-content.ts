@@ -269,7 +269,7 @@ export const projectItems = [
     titleEn: "Furniture & Equipment Cleaning",
     titleAr: "تنظيف الأثاث والمعدات",
     category: "cleaning",
-    image: "/assets/project-p4.jpg",
+    image: "/assets/project-p4.png",
     client: "Corporate Office",
     location: "Al Khobar",
     completion: "2026-06",

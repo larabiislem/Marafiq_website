@@ -49,7 +49,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               alt={`${companyInfo.nameEn} logo`}
               width={240}
               height={80}
-              className="h-14 md:h-16 w-auto object-contain"
+              className="h-14 md:h-16 object-contain"
+              style={{ width: 'auto' }}
               priority
             />
           </div>

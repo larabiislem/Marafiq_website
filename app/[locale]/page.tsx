@@ -256,10 +256,7 @@ export default async function Home({ params }: HomeProps) {
       <section className="overflow-hidden bg-[#0a0a10] border-t border-white/8 py-16 text-white">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
           <FadeIn>
-            <p className="mb-2 text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
-              {locale === "en" ? "Trusted By" : "يثقون بنا"}
-            </p>
-            <h2 className="text-4xl font-bold text-white md:text-5xl">{t.home.partnersTitle}</h2>
+            <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">{t.home.partnersTitle}</h2>
           </FadeIn>
           <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
             {partners.map((partner) => (

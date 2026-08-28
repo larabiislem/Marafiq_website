@@ -22,13 +22,15 @@ export const services = [
     image: "/assets/Electromechanical Works.png",
     en: {
       title: "Electromechanical Works",
-      description:
-        "Integrated mechanical, electrical, and plumbing execution covering power, control, and technical infrastructure with strict safety standards.",
+      description: "Integrated mechanical, electrical, and plumbing execution covering power, control, and technical infrastructure with strict safety standards.",
+      detailsIntro: "Comprehensive execution, management, and maintenance of electrical and mechanical systems, engineered to ensure operational continuity and maximum safety for all facility types.",
+      features: ["Power Distribution & Switchgear", "Generator Servicing & Backup Systems", "Control Panels & Automation", "Elevator & Escalator Maintenance", "Fire Alarm & Suppression Systems", "High-Efficiency Lighting Networks"]
     },
     ar: {
       title: "الأعمال الكهربائية والميكانيكية",
-      description:
-        "تنفيذ متكامل لأعمال الميكانيكا والكهرباء والبنية التحتية وفق أعلى معايير السلامة والجودة.",
+      description: "تنفيذ متكامل لأعمال الميكانيكا والكهرباء والبنية التحتية وفق أعلى معايير السلامة والجودة.",
+      detailsIntro: "تنفيذ وإدارة وصيانة شاملة للأنظمة الكهربائية والميكانيكية، مصممة لضمان استمرارية التشغيل وأقصى درجات السلامة لجميع أنواع المرافق.",
+      features: ["توزيع الطاقة والمفاتيح الكهربائية", "صيانة المولدات وأنظمة الدعم", "لوحات التحكم والأتمتة", "صيانة المصاعد والسلالم المتحركة", "أنظمة إنذار وإطفاء الحريق", "شبكات الإضاءة عالية الكفاءة"]
     },
   },
   {
@@ -37,13 +39,15 @@ export const services = [
     image: "/assets/PLACEHOLDER_HVAC.png",
     en: {
       title: "HVAC Systems (Air-Conditioning & Cooling)",
-      description:
-        "Design, installation, and maintenance of efficient cooling and ventilation systems for residential and commercial spaces.",
+      description: "Design, installation, and maintenance of efficient cooling and ventilation systems for residential and commercial spaces.",
+      detailsIntro: "Advanced climate control solutions prioritizing energy efficiency, superior air quality, and optimal thermal comfort for residential, commercial, and industrial spaces.",
+      features: ["Chiller & Boiler Maintenance", "Duct Cleaning & Sanitization", "Preventative Maintenance Contracts", "Smart Thermostat Calibration", "Industrial Ventilation Systems", "Air Purification & Filtration"]
     },
     ar: {
       title: "أنظمة التكييف والتبريد",
-      description:
-        "تصميم وتركيب وصيانة أنظمة تكييف وتهوية عالية الكفاءة للمشاريع السكنية والتجارية.",
+      description: "تصميم وتركيب وصيانة أنظمة تكييف وتهوية عالية الكفاءة للمشاريع السكنية والتجارية.",
+      detailsIntro: "حلول متقدمة للتحكم في المناخ تعطي الأولوية لكفاءة الطاقة، وجودة الهواء الفائقة، والراحة الحرارية المثلى للمساحات السكنية والتجارية والصناعية.",
+      features: ["صيانة المبردات والغلايات", "تنظيف وتعقيم مجاري الهواء", "عقود الصيانة الوقائية", "معايرة أجهزة تنظيم الحرارة الذكية", "أنظمة التهوية الصناعية", "تنقية وفلترة الهواء"]
     },
   },
   {
@@ -52,13 +56,15 @@ export const services = [
     image: "/assets/Plumbing,Systems.png",
     en: {
       title: "Plumbing & Sanitary Systems",
-      description:
-        "Reliable piping, water supply, and drainage solutions for long-lasting building performance.",
+      description: "Reliable piping, water supply, and drainage solutions for long-lasting building performance.",
+      detailsIntro: "Robust sanitary and drainage solutions engineered for long-term reliability, optimal water management, and strict compliance with health and safety standards.",
+      features: ["Water Supply & Piping Systems", "Drainage & Sewage Networks", "Sanitary Fixture Installation", "Leak Detection & Pressure Testing", "Pump Station Maintenance", "Water Tank Sterilization"]
     },
     ar: {
       title: "أنظمة السباكة والصرف الصحي",
-      description:
-        "حلول موثوقة لشبكات المياه والصرف والتمديدات الصحية لضمان استدامة وكفاءة المبنى.",
+      description: "حلول موثوقة لشبكات المياه والصرف والتمديدات الصحية لضمان استدامة وكفاءة المبنى.",
+      detailsIntro: "حلول صحية وشبكات صرف قوية مصممة لضمان الموثوقية طويلة الأمد، والإدارة المثلى للمياه، والامتثال الصارم لمعايير الصحة والسلامة.",
+      features: ["أنظمة إمداد المياه والأنابيب", "شبكات الصرف الصحي والمجاري", "تركيب الأجهزة الصحية", "كشف التسربات واختبار الضغط", "صيانة محطات الضخ", "تعقيم خزانات المياه"]
     },
   },
   {
@@ -67,13 +73,15 @@ export const services = [
     image: "/assets/service-low-voltage.png",
     en: {
       title: "Low-Voltage Works",
-      description:
-        "Smart low-current systems including access control and structured communication cabling.",
+      description: "Smart low-current systems including access control and structured communication cabling.",
+      detailsIntro: "State-of-the-art low-current systems integrating smart communication, robust security, and seamless facility management protocols.",
+      features: ["Access Control & Biometrics", "CCTV & Surveillance Networks", "Structured Communication Cabling", "Public Address & Voice Alarm", "Building Management Systems (BMS)", "Data Center Infrastructure"]
     },
     ar: {
       title: "أعمال الجهد المنخفض",
-      description:
-        "أنظمة ذكية تشمل التحكم بالدخول وتمديدات الاتصالات والشبكات للمباني الحديثة.",
+      description: "أنظمة ذكية تشمل التحكم بالدخول وتمديدات الاتصالات والشبكات للمباني الحديثة.",
+      detailsIntro: "أحدث أنظمة التيار الخفيف التي تدمج اتصالات ذكية، أماناً قوياً، وبروتوكولات سلسة لإدارة المرافق.",
+      features: ["التحكم بالدخول والأنظمة الحيوية", "شبكات المراقبة والكاميرات", "تمديدات كابلات الاتصالات", "الأنظمة الصوتية والإنذار", "أنظمة إدارة المباني (BMS)", "البنية التحتية لمراكز البيانات"]
     },
   },
   {
@@ -82,13 +90,49 @@ export const services = [
     image: "/assets/service-cleaning.png",
     en: {
       title: "Professional Cleaning for Industrial, Commercial & Residential",
-      description:
-        "Industrial, commercial, and residential cleaning operations delivered by trained teams and professional tools.",
+      description: "Industrial, commercial, and residential cleaning operations delivered by trained teams and professional tools.",
+      detailsIntro: "Daily or scheduled cleaning shaped around the needs of every facility.",
+      features: ["General Cleaning", "Deep Cleaning", "Glass & Window Polishing", "Common-Area Cleaning", "Commercial Cleaning", "Scheduled Cleaning Plans"]
     },
     ar: {
       title: "خدمات تنظيف احترافية للاحتياجات الصناعية والتجارية والسكنية",
-      description:
-        "خدمات تنظيف صناعية وتجارية وسكنية بواسطة فرق مدربة ومعدات احترافية.",
+      description: "خدمات تنظيف صناعية وتجارية وسكنية بواسطة فرق مدربة ومعدات احترافية.",
+      detailsIntro: "نظافة يومية أو دورية تناسب احتياج كل منشأة.",
+      features: ["النظافة العامة", "التنظيف العميق", "تلميع الزجاج والنوافذ", "تنظيف المناطق المشتركة", "نظافة المنشآت التجارية", "خطط نظافة مجدولة"]
+    },
+  },
+  {
+    slug: "material-maintenance",
+    icon: "hammer",
+    image: "/assets/service-material.png",
+    en: {
+      title: "Material Maintenance",
+      description: "Specialized care, restoration, and preservation of structural and interior materials to extend asset lifecycles.",
+      detailsIntro: "Specialized care, restoration, and preservation of structural and interior materials to protect your investment and extend asset lifecycles.",
+      features: ["Marble & Stone Restoration", "Metal & Steel Polishing", "Woodwork Preservation", "Epoxy Floor Coating", "Protective Surface Treatments", "Fabric & Upholstery Care"]
+    },
+    ar: {
+      title: "العناية بالمواد وصيانتها",
+      description: "عناية متخصصة وترميم وحفظ للمواد الهيكلية والداخلية لإطالة عمر الأصول.",
+      detailsIntro: "عناية متخصصة وترميم وحفظ للمواد الهيكلية والداخلية لحماية استثمارك وإطالة عمر الأصول.",
+      features: ["ترميم الرخام والحجر", "تلميع المعادن والصلب", "حفظ المصنوعات الخشبية", "طلاء الأرضيات الإيبوكسي", "معالجة الأسطح الواقية", "العناية بالأقمشة والمفروشات"]
+    },
+  },
+  {
+    slug: "industrial",
+    icon: "factory",
+    image: "/assets/service-industrial.jpg",
+    en: {
+      title: "Industrial Services",
+      description: "Heavy-duty operational support and maintenance tailored for complex industrial environments and machinery.",
+      detailsIntro: "Heavy-duty operational support and rigorous maintenance protocols tailored for complex industrial environments and heavy machinery.",
+      features: ["Production Line Maintenance", "Heavy Equipment Servicing", "Industrial Safety Compliance", "Conveyor System Operations", "Pneumatic & Hydraulic Systems", "Shutdown & Turnaround Support"]
+    },
+    ar: {
+      title: "الخدمات الصناعية",
+      description: "دعم تشغيلي وصيانة مخصصة للبيئات الصناعية المعقدة والآليات الثقيلة.",
+      detailsIntro: "دعم تشغيلي عالي التحمل وبروتوكولات صيانة دقيقة مصممة للبيئات الصناعية المعقدة والآليات الثقيلة.",
+      features: ["صيانة خطوط الإنتاج", "خدمة المعدات الثقيلة", "الامتثال للسلامة الصناعية", "عمليات أنظمة الحزام الناقل", "الأنظمة الهوائية والهيدروليكية", "دعم فترات التوقف والإغلاق"]
     },
   },
 ] as const;

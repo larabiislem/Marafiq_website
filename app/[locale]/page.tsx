@@ -4,6 +4,7 @@ import { ArrowRight, Compass, Flag, HeartHandshake, CheckCircle2, Zap, Wind, Dro
 import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
 import { HeroSlider } from "@/components/hero-slider";
+import { ServicesGrid } from "@/components/services-grid";
 
 import { StatsSection } from "@/components/stats-section";
 import { companyInfo, dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
@@ -96,56 +97,68 @@ export default async function Home({ params }: HomeProps) {
       </section>
       <StatsSection locale={locale} />
       {/* ─── ABOUT ────────────────────────────────────────────────────────── */}
-      <section id="about" className="relative overflow-hidden bg-[#0a0a10] py-28 text-white">
-        <div className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
-        <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#e8a33d]/8 blur-3xl" />
+      <section id="about" className="relative overflow-hidden bg-zinc-50 py-32 text-[#1a1a1a]">
         <div className="relative mx-auto w-full max-w-7xl px-6 md:px-12">
-          <FadeIn>
-            <div className="mb-4 flex items-center gap-3">
-              <div className="h-px w-10 bg-[#e8a33d]" />
-              <p className="text-xl font-bold uppercase tracking-[0.15em] text-[#e8a33d]">
-                {locale === "en" ? "Who We Are" : "من نحن"}
+          
+          <div className="mx-auto max-w-4xl text-center">
+            <FadeIn>
+              <div className="mb-6 flex justify-center items-center gap-3">
+                <div className="h-px w-12 bg-[#e8a33d]" />
+                <p className="text-sm font-bold uppercase tracking-widest text-[#e8a33d]">
+                  {locale === "en" ? "Company Overview" : "نظرة عامة"}
+                </p>
+                <div className="h-px w-12 bg-[#e8a33d]" />
+              </div>
+              <h2 className="mb-8 text-4xl font-bold leading-[1.15] text-[#111] md:text-5xl lg:text-6xl">
+                {t.about.title}
+              </h2>
+              <p className="mb-12 text-lg leading-relaxed text-zinc-600">
+                {t.about.intro}
               </p>
-            </div>
-            <h2 className="max-w-3xl text-6xl font-bold leading-tight text-white md:text-8xl">
-              {t.about.title}
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60">{t.about.intro}</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {t.about.values.map((v) => (
-                <span key={v} className="rounded-full border border-[#e8a33d]/25 bg-[#e8a33d]/10 px-4 py-1.5 text-xs font-medium text-[#f5c06e]">{v}</span>
-              ))}
-            </div>
-          </FadeIn>
-          <Stagger className="mt-14 grid gap-5 md:grid-cols-3">
+              <div className="flex flex-wrap justify-center gap-4">
+                {t.about.values.map((v) => (
+                  <div key={v} className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-5 py-2.5 shadow-sm">
+                    <CheckCircle2 className="h-5 w-5 text-[#e8a33d]" />
+                    <span className="text-sm font-bold text-zinc-800">{v}</span>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* THREE PILLARS */}
+          <Stagger className="mt-32 grid gap-8 md:grid-cols-3">
             <StaggerItem>
-              <article className="hover-lift h-full rounded-2xl border border-white/8 bg-white/[0.04] p-8 backdrop-blur">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8a33d]/15">
-                  <Compass className="h-5 w-5 text-[#e8a33d]" />
-                </span>
-                <h3 className="mt-5 text-lg font-semibold text-white">{t.about.visionTitle}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/55">{t.about.vision}</p>
+              <article className="group h-full rounded-3xl border border-zinc-200 bg-white p-8 md:p-10 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-50 transition-colors group-hover:bg-[#e8a33d]/10">
+                  <Compass className="h-8 w-8 text-[#e8a33d]" />
+                </div>
+                <h3 className="mb-4 text-2xl font-bold text-[#111]">{t.about.visionTitle}</h3>
+                <p className="text-zinc-600 leading-relaxed">{t.about.vision}</p>
               </article>
             </StaggerItem>
+            
             <StaggerItem>
-              <article className="hover-lift h-full rounded-2xl border border-white/8 bg-white/[0.04] p-8 backdrop-blur">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8a33d]/15">
-                  <Flag className="h-5 w-5 text-[#e8a33d]" />
-                </span>
-                <h3 className="mt-5 text-lg font-semibold text-white">{t.about.missionTitle}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/55">{t.about.mission}</p>
+              <article className="group h-full rounded-3xl border border-zinc-200 bg-white p-8 md:p-10 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-50 transition-colors group-hover:bg-[#e8a33d]/10">
+                  <Flag className="h-8 w-8 text-[#e8a33d]" />
+                </div>
+                <h3 className="mb-4 text-2xl font-bold text-[#111]">{t.about.missionTitle}</h3>
+                <p className="text-zinc-600 leading-relaxed">{t.about.mission}</p>
               </article>
             </StaggerItem>
+
             <StaggerItem>
-              <article className="hover-lift shine h-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#e8a33d] to-[#c8841d] p-8">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-black/15">
-                  <HeartHandshake className="h-5 w-5 text-[#111]" />
-                </span>
-                <h3 className="mt-5 text-lg font-semibold text-[#111]">{t.about.promiseTitle}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#111]/75">{t.about.promise}</p>
+              <article className="group h-full rounded-3xl bg-[#111] p-8 md:p-10 shadow-xl transition-all hover:-translate-y-1">
+                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10">
+                  <HeartHandshake className="h-8 w-8 text-[#e8a33d]" />
+                </div>
+                <h3 className="mb-4 text-2xl font-bold text-white">{t.about.promiseTitle}</h3>
+                <p className="text-white/70 leading-relaxed">{t.about.promise}</p>
               </article>
             </StaggerItem>
           </Stagger>
+
         </div>
       </section>
       {/* ─── SERVICES ─────────────────────────────────────────────────────── */}
@@ -162,24 +175,7 @@ export default async function Home({ params }: HomeProps) {
               {t.home.serviceOverviewTitle}
             </h2>
           </FadeIn>
-          <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <StaggerItem key={service.slug}>
-                <div className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:border-[#e8a33d]/40 hover:shadow-md">
-                  <div className="relative h-44 w-full overflow-hidden bg-zinc-100">
-                    <Image src={service.image} alt={service[locale].title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <ServiceIcon icon={service.icon} />
-                    <h3 className="mt-4 text-lg font-semibold">{service[locale].title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">{service[locale].description}</p>
-                    <div className="mt-5 h-0.5 w-10 rounded-full bg-[#e8a33d] transition-all duration-300 group-hover:w-16" />
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
+          <ServicesGrid services={services as any} locale={locale} rtl={rtl} />
         </div>
       </section>
       {/* ─── CAPABILITIES ────────────────────────────────────────────────── */}

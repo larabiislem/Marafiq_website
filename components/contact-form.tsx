@@ -24,7 +24,6 @@ export function ContactForm({ locale }: ContactFormProps) {
       email: String(formData.get("email") || ""),
       serviceType: String(formData.get("serviceType") || ""),
       message: String(formData.get("message") || ""),
-      captchaAnswer: String(formData.get("captchaAnswer") || ""),
       company: String(formData.get("company") || ""),
     };
 
@@ -104,14 +103,6 @@ export function ContactForm({ locale }: ContactFormProps) {
         />
       </label>
 
-      <label className="mt-4 block text-sm">
-        <span>{locale === "en" ? "Human check: 7 + 5 = ?" : "تحقق بشري: 5 + 7 = ؟"}</span>
-        <input
-          name="captchaAnswer"
-          required
-          className="mt-1 w-full rounded-lg border border-zinc-300 px-3 py-2 outline-none focus:border-[#e8a33d]"
-        />
-      </label>
 
       <input
         name="company"

@@ -2,78 +2,57 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { companyInfo } from "@/lib/site-content";
 
-type ContactPayload = {
-  fullName: string;
-  phone: string;
-  email: string;
-  serviceType: string;
-  message: string;
-  captchaAnswer: string;
-  company?: string;
-};
+export async function POST(req: Request) {
+  try {
+    const { fullName, phone, email, serviceType, message, company } = await req.json();
 
-export async function POST(request: Request) {
-  const body = (await request.json()) as ContactPayload;
-
-  if (body.company) {
-    return NextResponse.json({ ok: true, message: "Request received." });
-  }
-
-  if (body.captchaAnswer.trim() !== "12") {
-    return NextResponse.json(
-      { ok: false, message: "Captcha verification failed." },
-      { status: 400 },
-    );
-  }
-
-  if (!body.fullName || !body.phone || !body.email || !body.serviceType || !body.message) {
-    return NextResponse.json(
-      { ok: false, message: "Please fill all required fields." },
-      { status: 400 },
-    );
-  }
-
-  const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT || 587);
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const to = process.env.CONTACT_RECEIVER_EMAIL || companyInfo.email;
-
-  if (!host || !user || !pass) {
-    return NextResponse.json(
-      {
-        ok: false,
-        message:
-          "Email delivery is not configured yet. Set SMTP_HOST, SMTP_PORT, SMTP_USER, and SMTP_PASS.",
+    // Create a transporter using SMTP
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
-      { status: 503 },
+    });
+
+    const mailOptions = {
+      from: process.env.SMTP_USER,
+      to: companyInfo.email,
+      replyTo: email,
+      subject: `New Service Request: ${serviceType} (from ${fullName})`,
+      text: `
+        Name: ${fullName}
+        Company: ${company || 'N/A'}
+        Phone: ${phone}
+        Email: ${email}
+        Service Requested: ${serviceType}
+        
+        Message:
+        ${message}
+      `,
+      html: `
+        <h2 style="color: #e8a33d;">New Service Request</h2>
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Company:</strong> ${company || 'N/A'}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Service Requested:</strong> ${serviceType}</p>
+        <br />
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, '<br/>')}</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ ok: true, message: "Email sent successfully!" }, { status: 200 });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return NextResponse.json(
+      { ok: false, message: "Failed to send email. Please configure SMTP settings in .env" },
+      { status: 500 }
     );
   }
-
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  });
-
-  await transporter.sendMail({
-    from: `"Marafeq Website" <${user}>`,
-    to,
-    subject: `New quote request - ${body.serviceType}`,
-    replyTo: body.email,
-    text: [
-      `Name: ${body.fullName}`,
-      `Phone: ${body.phone}`,
-      `Email: ${body.email}`,
-      `Service: ${body.serviceType}`,
-      "",
-      body.message,
-    ].join("\n"),
-  });
-
-  return NextResponse.json({
-    ok: true,
-    message: "Your request has been sent successfully. We will contact you soon.",
-  });
 }

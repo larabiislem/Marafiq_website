@@ -24,11 +24,12 @@ export default async function ContactPage({ params }: ContactProps) {
 
         <FadeIn className="space-y-5 rounded-2xl bg-[var(--brand-gray)] p-6">
           <h2 className="text-xl font-semibold">{t.mapTitle}</h2>
-          <div className="space-y-2 text-sm text-zinc-700">
+          <div className="space-y-3 text-sm text-zinc-700">
             <p>{rawLocale === "en" ? companyInfo.addressEn : companyInfo.addressAr}</p>
-            <p>
-              <a href={`tel:${companyInfo.phone}`}>{companyInfo.phoneDisplay}</a>
-            </p>
+            <div className="flex flex-col space-y-1">
+              <a href={`tel:${companyInfo.phone}`} dir="ltr" className="inline-block text-left">{companyInfo.phoneDisplay}</a>
+              <a href={`tel:${companyInfo.phone2}`} dir="ltr" className="inline-block text-left">{companyInfo.phone2Display}</a>
+            </div>
             <p>
               <a href={`mailto:${companyInfo.email}`}>{companyInfo.email}</a>
             </p>

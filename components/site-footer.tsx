@@ -29,10 +29,11 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           </h4>
           <ul className="space-y-1 text-sm text-white/80">
             <li>{locale === "en" ? companyInfo.addressEn : companyInfo.addressAr}</li>
-            <li>
-              <a href={`tel:${companyInfo.phone}`}>{companyInfo.phoneDisplay}</a>
+            <li className="flex flex-col space-y-1 mt-2">
+              <a href={`tel:${companyInfo.phone}`} dir="ltr" className="inline-block text-left">{companyInfo.phoneDisplay}</a>
+              <a href={`tel:${companyInfo.phone2}`} dir="ltr" className="inline-block text-left">{companyInfo.phone2Display}</a>
             </li>
-            <li>
+            <li className="mt-2">
               <a href={`mailto:${companyInfo.email}`}>{companyInfo.email}</a>
             </li>
           </ul>

@@ -8,7 +8,9 @@ export const companyInfo = {
   addressAr: "الجوهرة، الخبر 34434، المملكة العربية السعودية",
   phone: "+966530555067",
   phoneDisplay: "+966 53 055 5067",
-  email: "marafeq.hm@gmail.com",
+  phone2: "+966550890199",
+  phone2Display: "+966 55 089 0199",
+  email: "Hmohammed@malbnaa.com",
   instagram: "@marafeq_albnaa",
   whatsappLink: "https://wa.me/966530555067",
   mapEmbed:

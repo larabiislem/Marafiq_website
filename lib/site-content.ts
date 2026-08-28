@@ -313,7 +313,7 @@ export const dictionary = {
       metrics: [
         { label: "Years of Experience", value: "15+" },
         { label: "Completed Projects", value: "320+" },
-        { label: "Strategic Partners", value: "8+" },
+        { label: "Strategic Partners", value: "+12" },
         { label: "Cities Served", value: "12+" },
       ],
     },
@@ -401,7 +401,7 @@ export const dictionary = {
       metrics: [
         { label: "سنوات الخبرة", value: "+15" },
         { label: "مشروع مكتمل", value: "+320" },
-        { label: "شريك استراتيجي", value: "+8" },
+        { label: "شريك استراتيجي", value: "+12" },
         { label: "مدينة مخدومة", value: "+12" },
       ],
     },

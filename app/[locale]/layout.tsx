@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { companyInfo, dictionary, isLocale, isRtl, locales } from "@/lib/site-content";
+import { seoKeywordsEn, seoKeywordsAr } from "@/lib/seo-keywords";
 
 type LocaleLayoutProps = {
   children: ReactNode;
@@ -25,15 +26,21 @@ export async function generateMetadata({
     return {};
   }
 
-  const title =
-    rawLocale === "en"
-      ? "Marafeq Facility Operations | Integrated Facility & Construction Solutions"
-      : "مرافق التشغيل | حلول تشغيلية وإنشائية متكاملة";
-  const description = dictionary[rawLocale].heroSubtitle;
+  const isEn = rawLocale === "en";
+  const title = isEn
+    ? "Marafeq Facility Operations | Integrated Facility & Building Maintenance in Eastern Province"
+    : "مرافق التشغيل | إدارة وتشغيل وصيانة المرافق والعقارات بالمنطقة الشرقية";
+  
+  const description = isEn
+    ? "Top-rated integrated facility management, HVAC, plumbing, electrical, and deep cleaning services in Dammam, Khobar, and Dhahran. We operate commercial and residential buildings with high standards."
+    : "شركة مرافق للتشغيل تقدم حلولاً متكاملة لإدارة وتشغيل وصيانة المباني والمرافق في الدمام، الخبر، والظهران. خدمات نظافة عميقة، صيانة تكييف، سباكة، كهرباء، وعقود صيانة سنوية لاتحادات الملاك والشركات.";
+
+  const keywords = isEn ? seoKeywordsEn : seoKeywordsAr;
 
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: `https://marafeqalbnaa.com/${rawLocale}`,
       languages: {
@@ -45,15 +52,15 @@ export async function generateMetadata({
       title,
       description,
       url: `https://marafeqalbnaa.com/${rawLocale}`,
-      siteName: rawLocale === "en" ? "Marafeq Facility Operations" : "مرافق التشغيل",
-      locale: rawLocale === "en" ? "en_US" : "ar_SA",
+      siteName: isEn ? "Marafeq Facility Operations" : "مرافق للتشغيل",
+      locale: isEn ? "en_US" : "ar_SA",
       type: "website",
       images: [
         {
           url: "/assets/logo.png",
           width: 800,
           height: 600,
-          alt: companyInfo.nameAr,
+          alt: isEn ? "Marafeq Facility Operations Logo" : "شعار شركة مرافق للتشغيل",
         },
       ],
     },
@@ -62,6 +69,17 @@ export async function generateMetadata({
       title,
       description,
       images: ["/assets/logo.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
@@ -73,11 +91,15 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   }
 
   const locale = rawLocale;
+  const isEn = locale === "en";
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: locale === "en" ? companyInfo.nameEn : companyInfo.nameAr,
+    name: isEn ? "Marafeq Facility Operations" : "شركة مرافق لإدارة وتشغيل وصيانة المرافق",
+    description: isEn 
+      ? "Integrated facility management, building maintenance, and commercial cleaning services in Eastern Province, SA."
+      : "إدارة المرافق المتكاملة وصيانة المباني التجارية والسكنية وخدمات النظافة في المنطقة الشرقية، الدمام والخبر.",
     image: "https://marafeqalbnaa.com/assets/logo.png",
     telePhone: companyInfo.phone,
     email: companyInfo.email,
@@ -86,10 +108,24 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       streetAddress: "Al Jawharah",
       addressLocality: "Al Khobar",
       postalCode: "34434",
+      addressRegion: "Eastern Province",
       addressCountry: "SA",
     },
+    areaServed: [
+      { "@type": "City", name: "Al Khobar" },
+      { "@type": "City", name: "Dammam" },
+      { "@type": "City", name: "Dhahran" }
+    ],
     url: `https://marafeqalbnaa.com/${locale}`,
     priceRange: "$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "08:00",
+        closes: "17:00"
+      }
+    ],
   };
 
   return (

@@ -2,8 +2,8 @@ export const locales = ["ar", "en"] as const;
 export type Locale = (typeof locales)[number];
 
 export const companyInfo = {
-  nameEn: "Marafeq Facility Operations",
-  nameAr: "مرافق التشغيل",
+  nameEn: "Marafiq Pro",
+  nameAr: "مرافق برو",
   addressEn: "Al Jawharah, Al Khobar 34434, Kingdom of Saudi Arabia",
   addressAr: "الجوهرة، الخبر 34434، المملكة العربية السعودية",
   phone: "+966530555067",
@@ -320,7 +320,7 @@ export const dictionary = {
     about: {
       title: "Integrated Solutions, One Reliable Team",
       intro:
-        "Marafeq Facility Operations provides integrated solutions for operating, maintaining, and cleaning facilities and properties. We serve companies, restaurants, cafés, commercial and residential buildings, and owners associations through flexible contracts tailored to each site.",
+        "Marafiq Pro provides integrated solutions for operating, maintaining, and cleaning facilities and properties. We serve companies, restaurants, cafés, commercial and residential buildings, and owners associations through flexible contracts tailored to each site.",
       visionTitle: "Vision",
       vision:
         "A trusted partner in keeping facilities efficient, ready, and well maintained.",

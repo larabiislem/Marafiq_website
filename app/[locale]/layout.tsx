@@ -28,12 +28,12 @@ export async function generateMetadata({
 
   const isEn = rawLocale === "en";
   const title = isEn
-    ? "Marafeq Facility Operations | Integrated Facility & Building Maintenance in Eastern Province"
-    : "مرافق التشغيل | إدارة وتشغيل وصيانة المرافق والعقارات بالمنطقة الشرقية";
+    ? "Marafiq Pro | Integrated Facility & Building Maintenance in Eastern Province"
+    : "مرافق برو | إدارة وتشغيل وصيانة المرافق والعقارات بالمنطقة الشرقية";
   
   const description = isEn
     ? "Top-rated integrated facility management, HVAC, plumbing, electrical, and deep cleaning services in Dammam, Khobar, and Dhahran. We operate commercial and residential buildings with high standards."
-    : "شركة مرافق للتشغيل تقدم حلولاً متكاملة لإدارة وتشغيل وصيانة المباني والمرافق في الدمام، الخبر، والظهران. خدمات نظافة عميقة، صيانة تكييف، سباكة، كهرباء، وعقود صيانة سنوية لاتحادات الملاك والشركات.";
+    : "شركة مرافق برو تقدم حلولاً متكاملة لإدارة وتشغيل وصيانة المباني والمرافق في الدمام، الخبر، والظهران. خدمات نظافة عميقة، صيانة تكييف، سباكة، كهرباء، وعقود صيانة سنوية لاتحادات الملاك والشركات.";
 
   const keywords = isEn ? seoKeywordsEn : seoKeywordsAr;
 
@@ -52,7 +52,7 @@ export async function generateMetadata({
       title,
       description,
       url: `https://marafeqalbnaa.com/${rawLocale}`,
-      siteName: isEn ? "Marafeq Facility Operations" : "مرافق للتشغيل",
+      siteName: isEn ? "Marafiq Pro" : "مرافق برو",
       locale: isEn ? "en_US" : "ar_SA",
       type: "website",
       images: [
@@ -60,7 +60,7 @@ export async function generateMetadata({
           url: "/assets/logo.png",
           width: 800,
           height: 600,
-          alt: isEn ? "Marafeq Facility Operations Logo" : "شعار شركة مرافق للتشغيل",
+          alt: isEn ? "Marafiq Pro Logo" : "شعار شركة مرافق برو",
         },
       ],
     },
@@ -96,7 +96,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: isEn ? "Marafeq Facility Operations" : "شركة مرافق لإدارة وتشغيل وصيانة المرافق",
+    name: isEn ? "Marafiq Pro" : "شركة مرافق برو لإدارة وتشغيل وصيانة المرافق",
     description: isEn 
       ? "Integrated facility management, building maintenance, and commercial cleaning services in Eastern Province, SA."
       : "إدارة المرافق المتكاملة وصيانة المباني التجارية والسكنية وخدمات النظافة في المنطقة الشرقية، الدمام والخبر.",

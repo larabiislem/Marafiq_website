@@ -3,7 +3,7 @@ export type Locale = (typeof locales)[number];
 
 export const companyInfo = {
   nameEn: "Marafiq Pro",
-  nameAr: "مرافق برو",
+  nameAr: "مرافق PRO",
   addressEn: "Al Jawharah, Al Khobar 34434, Kingdom of Saudi Arabia",
   addressAr: "الجوهرة، الخبر 34434، المملكة العربية السعودية",
   phone: "+966530555067",

@@ -45,7 +45,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         <Link href={`/${locale}`} className="flex items-center gap-4 hover:opacity-90 transition-opacity">
           <div className="py-1">
             <Image
-              src="/assets/logo_white.png"
+              src="/assets/logo_transparent.png"
               alt={`${companyInfo.nameEn} logo`}
               width={240}
               height={80}

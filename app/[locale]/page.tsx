@@ -71,7 +71,7 @@ export default async function Home({ params }: HomeProps) {
         <div className="relative z-20 mx-auto w-full max-w-5xl px-6 py-28 md:px-12 flex flex-col items-center">
           <FadeIn>
             <div className="float-slow mb-10 inline-block">
-              <Image src="/assets/logo_white.png" alt={companyInfo.nameEn} width={400} height={140} style={{ width: 'auto' }} className="h-32 md:h-40 object-contain drop-shadow-2xl" priority />
+              <Image src="/assets/logo_transparent.png" alt={companyInfo.nameEn} width={400} height={140} style={{ width: 'auto' }} className="h-32 md:h-40 object-contain drop-shadow-2xl" priority />
             </div>
             <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-[#f5c06e] drop-shadow-md">
               {companyInfo.nameEn} · {companyInfo.nameAr}

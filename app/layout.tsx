@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/logo.png",
+        url: "/assets/logo_light_bg.jpg",
         width: 800,
         height: 600,
         alt: "شعار مرافق التشغيل Marafeq Facility Operations Logo",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "مرافق التشغيل | حلول تشغيلية وإنشائية متكاملة",
     description:
       "خدمات احترافية في الإنشاءات والأنظمة الميكانيكية والكهربائية والسباكة وإدارة المرافق.",
-    images: ["/assets/logo.png"],
+    images: ["/assets/logo_light_bg.jpg"],
   },
 };
 

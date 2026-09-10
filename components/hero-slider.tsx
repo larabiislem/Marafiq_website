@@ -8,8 +8,10 @@ const slides = [
   { src: "/assets/hero-gallery-2.png", position: "object-center" },
   { src: "/assets/hero-gallery-3.png", position: "object-center" },
   { src: "/assets/hero-gallery-4.png", position: "object-center" },
-  { src: "/assets/project-p2.png", position: "object-[center_35%]" },
-  { src: "/assets/project-p5.png", position: "object-[center_35%]" },
+  { src: "/assets/team-training.jpg", position: "object-[center_35%]" },
+  { src: "/assets/industrial-inspection.jpg", position: "object-center" },
+  { src: "/assets/facade-cleaning.jpg", position: "object-center" },
+  { src: "/assets/deep-cleaning.jpg", position: "object-center" },
 ];
 
 export function HeroSlider() {

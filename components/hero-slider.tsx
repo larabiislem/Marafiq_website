@@ -4,13 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const slides = [
-  { src: "/assets/hero-gallery-1.png", position: "object-center" },
-  { src: "/assets/hero-gallery-2.png", position: "object-center" },
-  { src: "/assets/hero-gallery-3.png", position: "object-center" },
-  { src: "/assets/hero-gallery-4.png", position: "object-center" },
-  { src: "/assets/industrial-inspection.jpg", position: "object-center" },
+  { src: "/assets/team-training-landscape.jpg", position: "object-center" },
   { src: "/assets/facade-cleaning.jpg", position: "object-top" },
-  { src: "/assets/deep-cleaning.jpg", position: "object-center" },
+  { src: "/assets/deep-cleaning-new.jpg", position: "object-center" },
+  { src: "/assets/industrial-inspection.jpg", position: "object-center" },
 ];
 
 export function HeroSlider() {

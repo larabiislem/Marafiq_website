@@ -58,9 +58,6 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             <span className="text-lg font-bold leading-none text-[#e8a33d]">
               {locale === 'en' ? companyInfo.nameEn : companyInfo.nameAr}
             </span>
-            <span className="text-[10px] font-medium tracking-widest text-white/70 uppercase mt-1">
-              Facility Operations
-            </span>
           </div>
         </Link>
 

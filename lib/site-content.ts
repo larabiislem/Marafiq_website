@@ -19,20 +19,163 @@ export const companyInfo = {
 
 export const services = [
   {
-    slug: "electromechanical",
-    icon: "bolt",
-    image: "/assets/Electromechanical Works.png",
+    slug: "facility-operations",
+    icon: "building",
+    image: "/assets/team-training-landscape.jpg",
     en: {
-      title: "Electromechanical Works",
-      description: "Integrated mechanical, electrical, and plumbing execution covering power, control, and technical infrastructure with strict safety standards.",
-      detailsIntro: "Comprehensive execution, management, and maintenance of electrical and mechanical systems, engineered to ensure operational continuity and maximum safety for all facility types.",
-      features: ["Power Distribution & Switchgear", "Generator Servicing & Backup Systems", "Control Panels & Automation", "Elevator & Escalator Maintenance", "Fire Alarm & Suppression Systems", "High-Efficiency Lighting Networks"]
+      title: "Facility Operations",
+      description: "Integrated operational management to elevate property readiness, commercial buildings, and daily rental units with the highest efficiency.",
+      detailsIntro: "Comprehensive operation and preparation for apartments, daily rentals, and residential complexes.",
+      features: [
+        "Operation and preparation of apartments and daily rentals",
+        "On-site supervision and hotel-style preparation for guests",
+        "Daily operational follow-up ensuring service continuity",
+        "Organizing maintenance and cleaning schedules per property needs"
+      ]
     },
     ar: {
-      title: "الأعمال الكهربائية والميكانيكية",
-      description: "تنفيذ متكامل لأعمال الميكانيكا والكهرباء والبنية التحتية وفق أعلى معايير السلامة والجودة.",
-      detailsIntro: "تنفيذ وإدارة وصيانة شاملة للأنظمة الكهربائية والميكانيكية، مصممة لضمان استمرارية التشغيل وأقصى درجات السلامة لجميع أنواع المرافق.",
-      features: ["توزيع الطاقة والمفاتيح الكهربائية", "صيانة المولدات وأنظمة الدعم", "لوحات التحكم والأتمتة", "صيانة المصاعد والسلالم المتحركة", "أنظمة إنذار وإطفاء الحريق", "شبكات الإضاءة عالية الكفاءة"]
+      title: "إدارة وتشغيل المرافق",
+      description: "إدارة تشغيلية متكاملة لرفع جاهزية العقارات والمباني التجارية وتجهيز وحدات الإيجار اليومي بأعلى كفاءة.",
+      detailsIntro: "إدارة متكاملة تشمل التجهيز الفندقي والإشراف המيداني.",
+      features: [
+        "تشغيل وتجهيز الشقق ووحدات الإيجار اليومي والمجمعات السكنية.",
+        "الإشراف الميداني والتجهيز الفندقي لاستقبال الضيوف والمستأجرين.",
+        "متابعة أعمال التشغيل اليومي وضمان استمرارية الخدمات في الموقع.",
+        "تنظيم جداول الصيانة والنظافة وفق احتياج كل عقار."
+      ]
+    },
+  },
+  {
+    slug: "electrical-plumbing",
+    icon: "zap",
+    image: "/assets/Plumbing,Systems.png",
+    en: {
+      title: "Electrical & Plumbing Services",
+      description: "Comprehensive maintenance solutions to repair electrical faults, plumbing networks, and protect properties from leaks.",
+      detailsIntro: "Expert resolution of electrical and plumbing issues ensuring safety and longevity.",
+      features: [
+        "Electrical Services: Maintenance of distribution boards, breakers, lighting systems, and load safety.",
+        "Plumbing Services: Fixing clogs, water leaks, and maintaining pumps, heaters, and grease traps.",
+        "General Maintenance: Replacing damaged parts and updating property connections periodically."
+      ]
+    },
+    ar: {
+      title: "صيانة الكهرباء والسباكة",
+      description: "حلول صيانة شاملة لإصلاح أعطال الكهرباء وشبكات السباكة وحماية العقار من التسريبات.",
+      detailsIntro: "حلول صيانة متكاملة لضمان سلامة المبنى وكفاءته.",
+      features: [
+        "الخدمات الكهربائية: صيانة لوحات التوزيع، القواطع، منظومات الإنارة، وتأمين سلامة الأحمال.",
+        "خدمات السباكة: معالجة الانسدادات والتسربات المائية، وصيانة المضخات والسخانات ومصايد الدهون.",
+        "الصيانة العامة: استبدال القطع التالفة وتحديث التمديدات الدورية للعقار."
+      ]
+    },
+  },
+  {
+    slug: "cleaning",
+    icon: "sparkles",
+    image: "/assets/deep-cleaning-new.jpg",
+    en: {
+      title: "Cleaning Services",
+      description: "Daily, periodic, and deep cleaning programs for facilities, restaurants, and properties based on structured work plans.",
+      detailsIntro: "Customized cleaning protocols spanning general, deep, and periodic maintenance.",
+      features: [
+        "General and comprehensive cleaning for buildings, factories, and common areas.",
+        "Deep cleaning for commercial kitchens and the commercial surroundings of restaurants and cafes.",
+        "Periodic cleaning and preparation of apartments and properties (for daily rentals).",
+        "Cleaning entrances, facades, and facilities according to scheduled plans."
+      ]
+    },
+    ar: {
+      title: "خدمات النظافة المتخصصة",
+      description: "برامج نظافة يومية ودورية وعميقة للمرافق، المطاعم، والعقارات وفق خطط عمل وقوائم تحقق.",
+      detailsIntro: "خدمات نظافة شاملة تلبي احتياجات مختلف المرافق والقطاعات.",
+      features: [
+        "النظافة العامة والشاملة للمباني والمصانع والمناطق المشتركة.",
+        "التنظيف العميق للمطابخ والمحيط التجاري للمطاعم والمقاهي.",
+        "تنظيف وتجهيز الشقق والعقارات بين فترة وأخرى (لصالح الإيجار اليومي).",
+        "تنظيف المداخل والواجهات والمرافق وفق جداول دورية."
+      ]
+    },
+  },
+  {
+    slug: "mep-installation",
+    icon: "hard-hat",
+    image: "/assets/Electromechanical Works.png",
+    en: {
+      title: "MEP Installation",
+      description: "Establishment and routing of electrical and plumbing networks for new buildings and commercial expansions according to approved standards.",
+      detailsIntro: "Professional mechanical, electrical, and plumbing installations for new construction and expansions.",
+      features: [
+        "Establishing and routing clean water and sewage networks for buildings.",
+        "Electrical establishment, cable routing, and installation of distribution boards.",
+        "Installation of pumps, tanks, and pressure systems.",
+        "Comprehensive engineering testing and inspection prior to final handover."
+      ]
+    },
+    ar: {
+      title: "التأسيس والتنفيذ الفني",
+      description: "تأسيس وتمديد شبكات الكهرباء والسباكة للمباني الجديدة والتوسعات التجارية وفق المعايير المعتمدة.",
+      detailsIntro: "أعمال التأسيس الكهروميكانيكي للمباني والمشاريع الجديدة.",
+      features: [
+        "تأسيس وتمديد شبكات المياه الصافية والصرف الصحي للمباني.",
+        "التأسيس الكهربائي وتمديد الكابلات وتركيب لوحات التوزيع.",
+        "تركيب المضخات والخزانات وأنظمة الضغط.",
+        "الفحص والاختبار الهندسي الشامل قبل التسليم النهائي."
+      ]
+    },
+  },
+  {
+    slug: "equipment-maintenance",
+    icon: "wrench",
+    image: "/assets/industrial-inspection.jpg",
+    en: {
+      title: "Equipment Maintenance",
+      description: "Maintenance and repair of professional equipment and devices for restaurants and cafes to minimize downtime and extend operational life.",
+      detailsIntro: "Rapid preventive and corrective maintenance for commercial kitchen and cafe equipment.",
+      features: [
+        "Maintenance and repair of commercial kitchen equipment and cooking lines.",
+        "Maintenance of cafe setups, beverage, and food preparation equipment.",
+        "Inspection and repair of electromechanical and electrical faults in equipment.",
+        "Fast preventive maintenance and provision of approved spare parts."
+      ]
+    },
+    ar: {
+      title: "صيانة وإصلاح المعدات",
+      description: "صيانة وإصلاح المعدات والأجهزة الاحترافية للمطاعم والمقاهي لتقليل التوقفات وإطالة عمرها التشغيلي.",
+      detailsIntro: "صيانة وقائية وتصحيحية لمعدات المطابخ والمقاهي لضمان استمرارية العمل.",
+      features: [
+        "صيانة وإصلاح معدات المطابخ التجارية وخطوط الطهي.",
+        "صيانة تجهيزات المقاهي ومعدات تحضير المشروبات والأغذية.",
+        "فحص وتعديل الأعطال الكهروميكانيكية والكهربائية للمعدات.",
+        "الصيانة الوقائية السريعة وتوفير قطع الغيار المعتمدة."
+      ]
+    },
+  },
+  {
+    slug: "parts-fabrication",
+    icon: "hammer",
+    image: "/assets/service-industrial.jpg",
+    en: {
+      title: "Parts Fabrication",
+      description: "Engineering fabrication, lathing of spare parts, and pipe spooling to support factories and equipment, overcoming parts shortages.",
+      detailsIntro: "Custom machining, fabrication, and technical support for industrial machinery.",
+      features: [
+        "Fabrication and lathing of spare parts and steel/metal components.",
+        "Pre-assembly and fabrication of pipes and engineering joints (Pipe & Spool Fabrication).",
+        "Re-forming and manufacturing of damaged or unavailable parts based on samples or drawings.",
+        "Providing technical support to factories, workshops, and industrial equipment."
+      ]
+    },
+    ar: {
+      title: "التصنيع الهندسي وخرط القطع",
+      description: "تصنيع وخرط قطع الغيار وتجميع الأنابيب مسبقاً لدعم المصانع والمعدات وتجاوز نقص القطع.",
+      detailsIntro: "حلول هندسية متقدمة تشمل الخراطة وتصنيع القطع غير المتوفرة.",
+      features: [
+        "تصنيع وخرط قطع الغيار والمكونات الفولاذية والمعدنية.",
+        "التجميع والتصنيع المسبق للأنابيب والوصلات الهندسية (Pipe & Spool Fabrication).",
+        "إعادة تشكيل وتصنيع القطع التالفة أو غير المتوفرة حسب العينة أو الرسم.",
+        "تقديم الدعم الفني للمصانع، الورش، والمعدات الصناعية."
+      ]
     },
   },
   {
@@ -40,104 +183,29 @@ export const services = [
     icon: "fan",
     image: "/assets/PLACEHOLDER_HVAC.png",
     en: {
-      title: "HVAC Systems (Air-Conditioning & Cooling)",
-      description: "Design, installation, and maintenance of efficient cooling and ventilation systems for residential and commercial spaces.",
-      detailsIntro: "Advanced climate control solutions prioritizing energy efficiency, superior air quality, and optimal thermal comfort for residential, commercial, and industrial spaces.",
-      features: ["Chiller & Boiler Maintenance", "Duct Cleaning & Sanitization", "Preventative Maintenance Contracts", "Smart Thermostat Calibration", "Industrial Ventilation Systems", "Air Purification & Filtration"]
+      title: "HVAC Services",
+      description: "Preventive and corrective maintenance for central air conditioning and cooling systems to ensure efficiency and thermal stability.",
+      detailsIntro: "Complete maintenance and cleaning solutions for all types of cooling and HVAC systems.",
+      features: [
+        "Maintenance of central and independent AC units (Central, Package, Split).",
+        "Maintenance of cold rooms, freezers, and thermal equipment.",
+        "Cleaning and maintenance of air ducts and purification filters."
+      ]
     },
     ar: {
-      title: "أنظمة التكييف والتبريد",
-      description: "تصميم وتركيب وصيانة أنظمة تكييف وتهوية عالية الكفاءة للمشاريع السكنية والتجارية.",
-      detailsIntro: "حلول متقدمة للتحكم في المناخ تعطي الأولوية لكفاءة الطاقة، وجودة الهواء الفائقة، والراحة الحرارية المثلى للمساحات السكنية والتجارية والصناعية.",
-      features: ["صيانة المبردات والغلايات", "تنظيف وتعقيم مجاري الهواء", "عقود الصيانة الوقائية", "معايرة أجهزة تنظيم الحرارة الذكية", "أنظمة التهوية الصناعية", "تنقية وفلترة الهواء"]
+      title: "خدمات التكييف والتبريد",
+      description: "صيانة وقائية وتصحيحية لأنظمة التكييف والتبريد المركزي لضمان الكفاءة والاستقرار الحراري.",
+      detailsIntro: "صيانة متكاملة لكافة أنظمة التكييف لضمان بيئة مثالية ومستقرة.",
+      features: [
+        "صيانة وحدات التكييف المركزية والمستقلة (Central, Package, Split).",
+        "صيانة غرف التبريد والجمادات والتجهيزات الحرارية.",
+        "تنظيف وصيانة مجاري الهواء (Ducts) وفلاتر التنقية."
+      ]
     },
-  },
-  {
-    slug: "plumbing",
-    icon: "droplets",
-    image: "/assets/Plumbing,Systems.png",
-    en: {
-      title: "Plumbing & Sanitary Systems",
-      description: "Reliable piping, water supply, and drainage solutions for long-lasting building performance.",
-      detailsIntro: "Robust sanitary and drainage solutions engineered for long-term reliability, optimal water management, and strict compliance with health and safety standards.",
-      features: ["Water Supply & Piping Systems", "Drainage & Sewage Networks", "Sanitary Fixture Installation", "Leak Detection & Pressure Testing", "Pump Station Maintenance", "Water Tank Sterilization"]
-    },
-    ar: {
-      title: "أنظمة السباكة والصرف الصحي",
-      description: "حلول موثوقة لشبكات المياه والصرف والتمديدات الصحية لضمان استدامة وكفاءة المبنى.",
-      detailsIntro: "حلول صحية وشبكات صرف قوية مصممة لضمان الموثوقية طويلة الأمد، والإدارة المثلى للمياه، والامتثال الصارم لمعايير الصحة والسلامة.",
-      features: ["أنظمة إمداد المياه والأنابيب", "شبكات الصرف الصحي والمجاري", "تركيب الأجهزة الصحية", "كشف التسربات واختبار الضغط", "صيانة محطات الضخ", "تعقيم خزانات المياه"]
-    },
-  },
-  {
-    slug: "low-voltage",
-    icon: "cable",
-    image: "/assets/service-low-voltage.png",
-    en: {
-      title: "Low-Voltage Works",
-      description: "Smart low-current systems including access control and structured communication cabling.",
-      detailsIntro: "State-of-the-art low-current systems integrating smart communication, robust security, and seamless facility management protocols.",
-      features: ["Access Control & Biometrics", "CCTV & Surveillance Networks", "Structured Communication Cabling", "Public Address & Voice Alarm", "Building Management Systems (BMS)", "Data Center Infrastructure"]
-    },
-    ar: {
-      title: "أعمال الجهد المنخفض",
-      description: "أنظمة ذكية تشمل التحكم بالدخول وتمديدات الاتصالات والشبكات للمباني الحديثة.",
-      detailsIntro: "أحدث أنظمة التيار الخفيف التي تدمج اتصالات ذكية، أماناً قوياً، وبروتوكولات سلسة لإدارة المرافق.",
-      features: ["التحكم بالدخول والأنظمة الحيوية", "شبكات المراقبة والكاميرات", "تمديدات كابلات الاتصالات", "الأنظمة الصوتية والإنذار", "أنظمة إدارة المباني (BMS)", "البنية التحتية لمراكز البيانات"]
-    },
-  },
-  {
-    slug: "cleaning",
-    icon: "sparkles",
-    image: "/assets/service-cleaning.png",
-    en: {
-      title: "Professional Cleaning for Industrial, Commercial & Residential",
-      description: "Industrial, commercial, and residential cleaning operations delivered by trained teams and professional tools.",
-      detailsIntro: "Daily or scheduled cleaning shaped around the needs of every facility.",
-      features: ["General Cleaning", "Deep Cleaning", "Glass & Window Polishing", "Common-Area Cleaning", "Commercial Cleaning", "Scheduled Cleaning Plans"]
-    },
-    ar: {
-      title: "خدمات تنظيف احترافية للاحتياجات الصناعية والتجارية والسكنية",
-      description: "خدمات تنظيف صناعية وتجارية وسكنية بواسطة فرق مدربة ومعدات احترافية.",
-      detailsIntro: "نظافة يومية أو دورية تناسب احتياج كل منشأة.",
-      features: ["النظافة العامة", "التنظيف العميق", "تلميع الزجاج والنوافذ", "تنظيف المناطق المشتركة", "نظافة المنشآت التجارية", "خطط نظافة مجدولة"]
-    },
-  },
-  {
-    slug: "material-maintenance",
-    icon: "hammer",
-    image: "/assets/service-material.png",
-    en: {
-      title: "Material Maintenance",
-      description: "Specialized care, restoration, and preservation of structural and interior materials to extend asset lifecycles.",
-      detailsIntro: "Specialized care, restoration, and preservation of structural and interior materials to protect your investment and extend asset lifecycles.",
-      features: ["Marble & Stone Restoration", "Metal & Steel Polishing", "Woodwork Preservation", "Epoxy Floor Coating", "Protective Surface Treatments", "Fabric & Upholstery Care"]
-    },
-    ar: {
-      title: "العناية بالمواد وصيانتها",
-      description: "عناية متخصصة وترميم وحفظ للمواد الهيكلية والداخلية لإطالة عمر الأصول.",
-      detailsIntro: "عناية متخصصة وترميم وحفظ للمواد الهيكلية والداخلية لحماية استثمارك وإطالة عمر الأصول.",
-      features: ["ترميم الرخام والحجر", "تلميع المعادن والصلب", "حفظ المصنوعات الخشبية", "طلاء الأرضيات الإيبوكسي", "معالجة الأسطح الواقية", "العناية بالأقمشة والمفروشات"]
-    },
-  },
-  {
-    slug: "industrial",
-    icon: "factory",
-    image: "/assets/service-industrial.jpg",
-    en: {
-      title: "Industrial Services",
-      description: "Heavy-duty operational support and maintenance tailored for complex industrial environments and machinery.",
-      detailsIntro: "Heavy-duty operational support and rigorous maintenance protocols tailored for complex industrial environments and heavy machinery.",
-      features: ["Production Line Maintenance", "Heavy Equipment Servicing", "Industrial Safety Compliance", "Conveyor System Operations", "Pneumatic & Hydraulic Systems", "Shutdown & Turnaround Support"]
-    },
-    ar: {
-      title: "الخدمات الصناعية",
-      description: "دعم تشغيلي وصيانة مخصصة للبيئات الصناعية المعقدة والآليات الثقيلة.",
-      detailsIntro: "دعم تشغيلي عالي التحمل وبروتوكولات صيانة دقيقة مصممة للبيئات الصناعية المعقدة والآليات الثقيلة.",
-      features: ["صيانة خطوط الإنتاج", "خدمة المعدات الثقيلة", "الامتثال للسلامة الصناعية", "عمليات أنظمة الحزام الناقل", "الأنظمة الهوائية والهيدروليكية", "دعم فترات التوقف والإغلاق"]
-    },
-  },
-] as const;
+  }
+];
+
+
 
 export const partners = [
   { name: "HEX", logo: "/assets/HEX.png" },
@@ -468,3 +536,41 @@ export function isLocale(input: string): input is Locale {
 export function isRtl(locale: Locale) {
   return locale === "ar";
 }
+
+export const sectors = [
+  {
+    titleEn: "Commercial & Hospitality",
+    titleAr: "القطاع التجاري والضيافة",
+    descriptionEn: "Maintenance and operational support solutions tailored for restaurants, cafes, and commercial establishments to ensure uninterrupted operation.",
+    descriptionAr: "حلول صيانة ودعم تشغيلي مخصص للمطاعم، المقاهي، والمنشآت التجارية لضمان استمرارية التشغيل دون توقف.",
+    image: "/assets/sector-commercial.jpg"
+  },
+  {
+    titleEn: "Residential & HOA",
+    titleAr: "القطاع السكني واتحادات الملاك",
+    descriptionEn: "Management and operation of residential complexes, apartments, daily rental units, and providing maintenance and cleaning services for common areas.",
+    descriptionAr: "إدارة وتشغيل المجمعات السكنية، الشقق، وحدات الإيجار اليومي، وتقديم خدمات الصيانة والنظافة للمناطق المشتركة.",
+    image: "/assets/sector-residential.jpg"
+  },
+  {
+    titleEn: "Administrative Buildings & Offices",
+    titleAr: "المباني الإدارية والمكاتب",
+    descriptionEn: "Periodic maintenance programs and integrated facility management for companies, cafes, and offices to raise the efficiency of the work environment.",
+    descriptionAr: "برامج صيانة دورية وإدارة مرافق متكاملة للشركات والمقاهي والمكاتب لرفع كفاءة بيئة العمل.",
+    image: "/assets/sector-offices.jpg"
+  },
+  {
+    titleEn: "Industrial & Workshops",
+    titleAr: "القطاع الصناعي والورش",
+    descriptionEn: "Technical and engineering support for factories and workshops including spare parts manufacturing, metal turning, and heavy equipment maintenance.",
+    descriptionAr: "دعم فني وهندسي للمصانع والورش يشمل تصنيع قطع الغيار، وخرط المعادن، وصيانة المعدات الثقيلة.",
+    image: "/assets/sector-industrial.jpg"
+  },
+  {
+    titleEn: "Exhibitions & Stores",
+    titleAr: "المعارض والمتاجر",
+    descriptionEn: "Maintenance of installations, technical foundations, electrical systems, and air conditioning for shops and commercial exhibitions.",
+    descriptionAr: "صيانة التمديدات والتأسيسات الفنية والأنظمة الكهربائية والتكييف للمحلات والمعارض التجارية.",
+    image: "/assets/sector-retail.jpg"
+  }
+];

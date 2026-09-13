@@ -5,6 +5,7 @@ import { FadeIn, Stagger, StaggerItem } from "@/components/animated";
 import { ServiceIcon } from "@/components/service-icon";
 import { HeroSlider } from "@/components/hero-slider";
 import { ServicesGrid } from "@/components/services-grid";
+import { SectorsGrid } from "@/components/sectors-grid";
 
 import { StatsSection } from "@/components/stats-section";
 import { companyInfo, dictionary, isLocale, isRtl, Locale, partners, services } from "@/lib/site-content";
@@ -178,6 +179,7 @@ export default async function Home({ params }: HomeProps) {
           <ServicesGrid services={services as any} locale={locale} rtl={rtl} />
         </div>
       </section>
+      <SectorsGrid locale={locale} />
       {/* ─── CAPABILITIES ────────────────────────────────────────────────── */}
       <section id="capabilities" className="overflow-hidden bg-[#0a0a10] py-24 text-white">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
